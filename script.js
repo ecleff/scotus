@@ -32,6 +32,7 @@ const x = d3.scaleLinear()
 svg.append("g")
   .attr("transform", `translate(0, ${height})`)
   .call(d3.axisBottom(x))
+  .remove()
   .selectAll("text")
   .attr("transform", "translate(-10,0)rotate(-45)")
   .style("text-anchor", "end");
@@ -43,16 +44,24 @@ svg.append("g")
   .padding(1);
 svg.append("g")
   .call(d3.axisLeft(y))
+  .remove()
 
+  const myColor = d3.scaleOrdinal()
+    .domain(["A", "B","C", "D"])
+    .range(d3.schemeSet1);
 // Circles -> start at X=0
 svg.selectAll("mycircle")
   .data(data)
   .join("circle")
-    .attr("cx", function(d) { return x(d.start_location_number); } )
+    // .attr("cx", function(d) { return x(d.start_location_number); } )
+    .attr("cx", 1)
     .attr("cy", 4)
     .attr("r", "7")
-    .style("fill", "#69b3a2")
-    .attr("stroke", "black")
+    .style("fill", d => myColor(d.end_location))
+  
+// perhaps add elements of beeswarm so that the points are not fully overlapping each other
+
+
 
 // Change the X coordinates of line and circle
 svg.selectAll("circle")
@@ -60,8 +69,8 @@ svg.selectAll("circle")
   .delay(function(d,i){ return 1000*i; }) 
   .duration(3000)
   .attr("cx", function(d) { return x(d.end_location_number); })
-//   .attr("cy", 0)
-//   .delay(function(i){return(i*10)})
+  .attr("cy", 100)
+
   
   
 
