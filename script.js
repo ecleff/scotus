@@ -4,126 +4,85 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-const svg = d3.select("#my_dataviz")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          `translate(${margin.left}, ${margin.top})`);
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+// Test - THIS ONE WORKS, just not with clustering.
 
 
-// test
-
-d3.csv("test_data.csv").then(function (data) {
-
-
-    // for every record, format our numbers as numbers for these columns
+// // Parse the Data
+d3.csv("test_data.csv").then(function(data) {
 data.forEach(function (d) {
     d["start_location_number"] = +d["start_location_number"];
         d["end_location_number"] = +d["end_location_number"];
+        d["end_location_y"] = +d["end_location_y"];   
       });
 
+// sort data
+data.sort(function(b, a) {
+  return a.end_location_number - b.end_location_number;
+});
+console.log(data)
 
-    // sort
-    data.sort(function (a, b) { return b.end_location_number - a.end_location_number; })
-
-
-    console.log(data);
-
-    /*
-    BEGIN BY DEFINING THE DIMENSIONS OF THE SVG and CREATING THE SVG CANVAS
-    */
-    // var width = document.querySelector("#chart").clientWidth;
-    // var height = document.querySelector("#chart").clientHeight;
-    // var svg = d3.select("#chart")
-    //     .append("svg")
-    //     .attr("width", width)
-    //     .attr("height", height);
-
-    // // create some margins
-    // var margin = { left: 100, right: 100 };
-
-    // store the extent (min/max) for vars that we wannt to use
-   
-    var xExtent = d3.extent(data, function (d) { return +d.end_location_number; });
-
-    /*
-    CREATE SOME SCALES
-    */
-   
-    const myColor = d3.scaleOrdinal()
-        .domain(["A", "B","C", "D"])
-        .range(d3.schemeSet1);
-
-    var xScale = d3.scaleLinear()
+// Add X axis
+var xExtent = d3.extent(data, function (d) { return +d.end_location_number; });
+var xScale = d3.scaleLinear()
         .domain(xExtent)
         .range([margin.left, width - margin.right]);
 
-    console.log(xScale.domain())
 
-    var yScale = d3.scaleBand()
-        .range([ 0, height ])
-        .domain(data.map(function(d) { return d.start_location_number; }))
-    //  .padding(1);
-
-
-    /*
-    DRAW THE AXES
-    */
-    svg.append("g")
-        .attr("transform", `translate(0,${height - 100})`)
-        .call(d3.axisBottom(xScale))
-        .remove();
-
-    svg.append("g")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(yScale))
-        .remove();
-
-    // CENTER SIMULATION OPTION
-    // var simulation = d3.forceSimulation(data)
-    //     .force('charge', d3.forceManyBody().strength(0)) // send nodes away from eachother
-    //     .force('center', d3.forceCenter(width / 2, height / 2)) // pull nodes to a central point
-    //     .force('collision', d3.forceCollide().radius(function (d) { // prevent circle overlap when collide
-    //         return rScale(d.Cocoa_Percent);
-    //     }).strength(1))
-    //     .on('tick', ticked);
+const x = d3.scaleLinear()
+.domain(xExtent)
+.range([margin.left, width - margin.right]);
+//   .domain([0, 4])
+//   .range([ 0, width]);
+svg.append("g")
+  .attr("transform", `translate(0, ${height})`)
+  .call(d3.axisBottom(x))
+  .remove()
+  .selectAll("text")
+  .attr("transform", "translate(-10,0)rotate(-45)")
+  .style("text-anchor", "end");
 
 
-    // GROUPED SIMULATION
-    var simulation = d3.forceSimulation(data)
-        .force('x', d3.forceX().x(function (d) {
-            return xScale(+d.end_location_number);
-        }).strength(0.1))
-        .force('y', d3.forceY().y(100).strength(0.4))
-        // .force('y', d3.forceY().y(function (d) {
-        //     return height / 2;
-        // }).strength(0.8))
-        .force('collision', d3.forceCollide().radius(function (d) { // prevent circle overlap when collide
-            return 2;
-        }).strength(0.1))
-        // .force('charge', d3.forceManyBody().strength(-5)) // send nodes away from eachother
-        .on('tick', ticked)
-        .velocityDecay(0.7);
+// Y axis
+  const y = d3.scaleBand()
+  .range([ 0, height ])
+  .domain(data.map(function(d) { return d.end_location_number; }))
+  .padding(1);
+svg.append("g")
+  .call(d3.axisLeft(y))
+  .remove()
 
-    /* 
-    ADD TOOLTIP
-    The visualization gets too cluttered if we try to add text labels;
-    use a tooltip instead
-    */
-    var tooltip = d3.select("#my_dataviz")
+  const myColor = d3.scaleOrdinal()
+    .domain(["A", "B","C", "D"])
+    .range(d3.schemeSet1);
+// Circles -> start at X=0
+svg.selectAll("mycircle")
+  .data(data)
+  .join("circle")
+    // .attr("cx", function(d) { return x(d.start_location_number); } )
+    .attr("cx", 50)
+    .attr("cy", 200)
+    .attr("r", "7")
+    .style("fill", d => myColor(d.end_location))
+
+
+
+
+var tooltip = d3.select("#my_dataviz")
         .append("div")
         .attr("class", "tooltip");
 
-
-    function ticked() {
+function ticked() {
         var u = svg
             .selectAll('circle')
             .data(data)
             .join('circle')
             .attr('r', function (d) {
-                return 3;
+                return 8;
             })
             .attr('fill', function (d) {
                 return myColor(d.end_location);
@@ -135,7 +94,7 @@ data.forEach(function (d) {
                 return d.y
             }).on('mouseover', function (event, d) {
 
-                tooltip.style("visibility", "visible")
+            tooltip.style("visibility", "visible")
                     .style("left", event.offsetX + "px")
                     .style("top", event.offsetY + "px")
                     .html("<h4>" + d.person );
@@ -147,115 +106,119 @@ data.forEach(function (d) {
 
                 d3.selectAll('circle').attr("stroke", null)
             });
+
     }
-});
 
 
 
 
 
+// Simulation
+d3.forceSimulation(data)
+.force("x", d3.forceX(88).strength(0.2).x(d => {
+    if (d.end_location_number === 1) {
+        return width * 0.25;
+    } else if (d.end_location_number === 2) {
+        return width * 0.5;
+    } else if (d.end_location_number === 3) {
+        return width * 0.75;
+    } else {
+        return width * 0.9;
+    }
+}))
+  .force("y", d3.forceY(50).strength(0.1))
+  .force("collide", d3.forceCollide(6).strength(5))
+  .alpha(0.25)
+  .on('tick', ticked)
+
+})
 
 
-// // Parse the Data
-// d3.csv("test_data.csv").then(function(data) {
-// data.forEach(function (d) {
-//     d["start_location_number"] = +d["start_location_number"];
-//         d["end_location_number"] = +d["end_location_number"];
+// second test
+// // load the CSV file and create the force-directed graph
+// d3.csv("test_data.csv", function(data) {
+//     // define the groups
+//     var groups = [
+//       { id: "A", members: ["Bob1", 'Bob5', 'Bob9'] },
+//       { id: "B", members: ["Bob2", "Bob6", "Bob10"] },
+//       { id: "C", members: ["Bob3", "Bob7", "Bob11"] },
+//       { id: "D", members: ["Bob4", "Bob8", "Bob12"] }
+//     ];
+  
+//     // create the nodes array with the person and group properties
+//     var nodes = [data].map(function(d) {
+//       return {
+//         person: d.person,
+//         group: d.end_location
+//       };
+//     });
+  
+//     // create the links array based on the person and group properties
+//     var links = [];
+//     nodes.forEach(function(node) {
+//       groups.forEach(function(group) {
+//         if (group.members.indexOf(node.person) !== -1) {
+//           var link = {
+//             source: node.person,
+//             target: group.id
+//           };
+//           links.push(link);
+//         }
 //       });
-
-// // sort data
-// data.sort(function(b, a) {
-//   return a.end_location_number - b.end_location_number;
-// });
-// console.log(data)
-
-// // Add X axis
-// const x = d3.scaleLinear()
-//   .domain([0, 4])
-//   .range([ 0, width]);
-// svg.append("g")
-//   .attr("transform", `translate(0, ${height})`)
-//   .call(d3.axisBottom(x))
-//   .remove()
-//   .selectAll("text")
-//   .attr("transform", "translate(-10,0)rotate(-45)")
-//   .style("text-anchor", "end");
-
-// // Y axis
-//   const y = d3.scaleBand()
-//   .range([ 0, height ])
-//   .domain(data.map(function(d) { return d.end_location_number; }))
-//   .padding(1);
-// svg.append("g")
-//   .call(d3.axisLeft(y))
-//   .remove()
-
-//   const myColor = d3.scaleOrdinal()
-//     .domain(["A", "B","C", "D"])
-//     .range(d3.schemeSet1);
-// // Circles -> start at X=0
-// svg.selectAll("mycircle")
-//   .data(data)
-//   .join("circle")
-//     // .attr("cx", function(d) { return x(d.start_location_number); } )
-//     .attr("cx", 1)
-//     .attr("cy", 4)
-//     .attr("r", "7")
-//     .style("fill", d => myColor(d.end_location))
-
-//     // testin
-// let simulation = d3.forceSimulation(data)
-//     .force("x", d3.forceX(function(d) {
-//         return x(d.end_location_number);
-//     }).strength(2))
-//     .force("y", d3.forceY((height / 2) - margin.bottom / 2))
-//     .force("collide", d3.forceCollide(9))
-//     .stop();
-
-// // Manually run simulation
-// for (let i = 0; i < data.length; ++i) {
-//     simulation.tick(10);
-// }
-
+//     });
   
-// // perhaps add elements of beeswarm so that the points are not fully overlapping each other
+//     console.log(svg)
+//     // use the nodes and links arrays to create the force-directed graph
+//     // ...
+//     function dragstarted(d) {
+//         if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+//         d.fx = d.x;
+//         d.fy = d.y;
+//       }
+      
+//       function dragged(d) {
+//         d.fx = d3.event.x;
+//         d.fy = d3.event.y;
+//       }
+      
+//       function dragended(d) {
+//         if (!d3.event.active) simulation.alphaTarget(0);
+//         d.fx = null;
+//         d.fy = null;
+//       }
+      
+// var link = svg.selectAll(".link")
+//     .data(links)
+//     .enter().append("line")
+//     .attr("class", "link");
 
-// // labels for groups not working rn - do this later
-// // Features of the annotation
-// // const annotations = [
-// //     {
-// //       note: {
-// //         label: "Here is the annotation label",
-// //         title: "Annotation title",
-// //         align: "middle",  // try right or left
-// //         wrap: 200,  // try something smaller to see text split in several lines
-// //         padding: 10   // More = text lower
-// //       },
-// //       color: ["#69b3a2"],
-// //       x: 160,
-// //       y: 160,
-// //       dy: 100,
-// //       dx: 100
-// //     }
-// //   ]
+//   var node = svg.selectAll(".node")
+//     .data(nodes)
+//     .enter().append("circle")
+//     .attr("class", "node")
+//     .attr("r", 5)
+//     .style("fill", function(d) { return myColor(d.group); })
+//     .call(d3.drag()
+//         .on("start", dragstarted)
+//         .on("drag", dragged)
+//         .on("end", dragended));
+
+//     var simulation = d3.forceSimulation(nodes)
+//       .force("x", d3.forceX().strength(0.1))
+//       .force("y", d3.forceY().strength(0.1))
+//       .force("link", d3.forceLink(links).id(function(d) { return d.person; }))
+//       .on("tick", ticked);
   
-// //   // Add annotation to the chart
-// //   const makeAnnotations = d3.annotation()
-// //     .annotations(annotations)
-// //   d3.select("#my_dataviz")
-// //     .append("svg")
-// //     .call(makeAnnotations)
-
-// // Change the X coordinates of line and circle
-// svg.selectAll("circle")
-//   .transition()
-//   .delay(function(d,i){ return 1000*i; }) 
-//   .duration(3000)
-//   .attr("cx", function(d) { return x(d.end_location_number); })
-//   .attr("cy", 100)
-
-  
-  
-
  
-// })
+  
+//     function ticked() {
+//       node.attr("cx", function(d) { return d.x; })
+//           .attr("cy", function(d) { return d.y; });
+  
+//       link.attr("x1", function(d) { return d.source.x; })
+//           .attr("y1", function(d) { return d.source.y; })
+//           .attr("x2", function(d) { return d.target.x; })
+//           .attr("y2", function(d) { return d.target.y; });
+//     }
+    
+//   });
