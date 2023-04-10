@@ -210,65 +210,75 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 //       .on("tick", ticked);
 
 
-// network test - works
+// Test Networks - WORKS
+// d3.json("test.json").then(function (data) {
+// // Assuming your JSON object is stored in a variable called "graph"
+// var nodes = data.nodes;
+// var links = [];
 
+// // Loop through the nodes to find relationships between them
+// for (var i = 0; i < nodes.length; i++) {
+//   for (var j = i + 1; j < nodes.length; j++) {
+//     // Check if there is a relationship between nodes[i] and nodes[j]
+//     // For example, you could define a relationship as having the same "end_location" value
+//     if (nodes[i].end_location === nodes[j].end_location) {
+//       // Add a link to the "links" array
+//       links.push({source: i, target: j});
+//     }
+//   }
+// }
 
-/* DEFINE DIMENSIONS AND GENERATE SVG */
-// var width = document.querySelector("#chart").clientWidth;
-// var height = document.querySelector("#chart").clientHeight;
-// var svg = d3.select("#chart")
-//     .append("svg")
-//     .attr("width", width)
-//     .attr("height", height);
+// // Add the "links" array to the JSON object
+// data.links = links;
 
-// d3.json("characters.json").then(function (data) {
+// console.log(data.nodes)
+// console.log(data.links)
 
-//     /* 
-//     MAKE SOME SCALES
-//     */
+// //     MAKE SOME SCALES
+// //     */
 
-//     var zones = data.nodes.map(function (d) { return d.zone; })
+//     var zones = data.nodes.map(function (d) { return d.end_location; })
 //     let uniqueZones = [...new Set(zones)];
 
-//     var colorScale = d3.scaleOrdinal()
+// var colorScale = d3.scaleOrdinal()
 //         .domain(uniqueZones)
 //         .range(d3.schemeTableau10);
 //     console.log(uniqueZones)
 
-//     var rExtent = d3.extent(data.nodes, function (d) { return d.influence; });
-//     var rScale = d3.scaleLinear()
-//         .domain(rExtent)
-//         .range([3, 25])
 
-//         console.log(data.nodes)
 
-//     /* 
-//     INITIALIZE FORCE SIMULATION 
-//     Find a layout that you like by tweaking the parameters. 
-//     For a useful tool, see:
-//     https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
-//     */
+// //     /* 
+// //     INITIALIZE FORCE SIMULATION 
+// //     Find a layout that you like by tweaking the parameters. 
+// //     For a useful tool, see:
+// //     https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
+// //     */
 //     var simulation = d3.forceSimulation(data.nodes)
-//         .force("link", d3.forceLink(data.links).id(function (d) { return d.id;}).distance(40).strength(0.4))
-//         .force("center", d3.forceCenter(width / 2, height / 2))
-//         .force("charge", d3.forceManyBody().strength(-50))
-//         .force("collide", d3.forceCollide().radius(30).strength(0.5));
+//         // .force("link", d3.forceLink(data.links).id(function (d) { return d.index;}).distance(2).strength(0.4))
+//         .force("x", d3.forceX(40).strength(0.4).x(d => {
+//     if (d.end_location_number === 1) {
+//         return width * 0.2;
+//     } else if (d.end_location_number === 2) {
+//         return width * 0.4;
+//     } else if (d.end_location_number === 3) {
+//         return width * 0.6;
+//     } else {
+//         return width * 0.8;
+//     }
+// }))
+//   .force("y", d3.forceY(50).strength(0.3).y(300))
+//         // .force("center", d3.forceCenter(width / 2, height / 2))
+//         // .force("charge", d3.forceManyBody().strength(5))
+//         .force("collide", d3.forceCollide().radius(10).strength(0.5))
+//         // .alpha(.0005)
+// 		.velocityDecay(0.9);
 
-//     /* DRAW THE LINES FOR LINKS */
-//     var link = svg.append("g")
-//         .selectAll("line")
-//         .data(data.links)
-//         .enter()
-//         .append("line")
-//         .attr("stroke", "#999")
-//         .attr("stroke-width", function (d) {
-//             return d.weight / 4;
-//         });
 
-//     /* 
-//     DRAW THE CIRCLES FOR THE NODES
-//     Why do we draw these after the links?
-//     */
+
+// //     /* 
+// //     DRAW THE CIRCLES FOR THE NODES
+// //     Why do we draw these after the links?
+// //     */
 //     var node = svg.append("g")
 //         .selectAll("circle")
 //         .data(data.nodes)
@@ -276,17 +286,15 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 //         .append("circle")
 //         .attr("stroke", "#fff")
 //         .attr("stroke-width", 0.5)
-//         .attr("r", function (d) {
-//             return rScale(d.influence)
-//         })
+//         .attr("r", 8)
 //         .attr("fill", function (d) {
-//             return colorScale(d.zone)
+//             return colorScale(d.end_location)
 //         })
 
-//     /* 
-//     MAKE A LEGEND
-//     */
-//     // create a group for our legend
+// //     /* 
+// //     MAKE A LEGEND
+// //     */
+// //     // create a group for our legend
 //     var legend = svg.append("g")
 //         .attr("class", "legend")
 //         .attr("width", 200)
@@ -297,7 +305,7 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 //     legend.append("text")
 //         .attr("x", 10)
 //         .attr("y", 0)
-//         .text("Character zone")
+//         .text("End location")
 
 //     // for each color in our domain, add a dot and label
 //     colorScale.domain().forEach((d, i) => {
@@ -313,18 +321,14 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 //             .text(d);
 //     })
 
-//     /* 
-//     TICK THE SIMULATION 
-//     Each time the simulation iterates ("ticks"), we will
-//     update the positions of the nodes (circles) and links (lines)
-//     in the network
-//     */
+// //     /* 
+// //     TICK THE SIMULATION 
+// //     Each time the simulation iterates ("ticks"), we will
+// //     update the positions of the nodes (circles) and links (lines)
+// //     in the network
+// //     */
 
 //     simulation.on("tick", function () {
-//         // link.attr("x1", function (d) { return d.source.x; })
-//         //     .attr("y1", function (d) { return d.source.y; })
-//         //     .attr("x2", function (d) { return d.target.x; })
-//         //     .attr("y2", function (d) { return d.target.y; });
 
 //         node
 //             .attr("cx", function (d) { return d.x; })
@@ -332,8 +336,8 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 
 //     });
 
-//     /* ADD A TOOLTIP */
-//     var tooltip = d3.select("#chart")
+// //     /* ADD A TOOLTIP */
+//     var tooltip = d3.select("#my_dataviz")
 //         .append("div")
 //         .attr("class", "tooltip");
 
@@ -355,18 +359,22 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
   
  
   
-// //     function ticked() {
-// //       node.attr("cx", function(d) { return d.x; })
-// //           .attr("cy", function(d) { return d.y; });
+//     function ticked() {
+//       node.attr("cx", function(d) { return d.x; })
+//           .attr("cy", function(d) { return d.y; });
   
-// //       link.attr("x1", function(d) { return d.source.x; })
-// //           .attr("y1", function(d) { return d.source.y; })
-// //           .attr("x2", function(d) { return d.target.x; })
-// //           .attr("y2", function(d) { return d.target.y; });
-// //     }
+//     //   link.attr("x1", function(d) { return d.source.x; })
+//     //       .attr("y1", function(d) { return d.source.y; })
+//     //       .attr("x2", function(d) { return d.target.x; })
+//     //       .attr("y2", function(d) { return d.target.y; });
+//     }
     
-// //   });
 
+
+
+
+
+// test 4  - working now but basically the same as the one above
 
 
 d3.json("test.json").then(function (data) {
@@ -395,44 +403,15 @@ console.log(data.links)
 //     MAKE SOME SCALES
 //     */
 
-    var zones = data.nodes.map(function (d) { return d.end_location; })
+var zones = data.nodes.map(function (d) { return d.end_location; })
     let uniqueZones = [...new Set(zones)];
 
-    var colorScale = d3.scaleOrdinal()
+var colorScale = d3.scaleOrdinal()
         .domain(uniqueZones)
         .range(d3.schemeTableau10);
     console.log(uniqueZones)
 
-
-
-//     /* 
-//     INITIALIZE FORCE SIMULATION 
-//     Find a layout that you like by tweaking the parameters. 
-//     For a useful tool, see:
-//     https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
-//     */
-    var simulation = d3.forceSimulation(data.nodes)
-        .force("link", d3.forceLink(data.links).id(function (d) { return d.index;}).distance(2).strength(0.4))
-        .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("charge", d3.forceManyBody().strength(5))
-        .force("collide", d3.forceCollide().radius(10).strength(0.5));
-
-//     /* DRAW THE LINES FOR LINKS */
-//     var link = svg.append("g")
-//         .selectAll("line")
-//         .data(data.links)
-//         .enter()
-//         .append("line")
-//         .attr("stroke", "#999")
-//         .attr("stroke-width", function (d) {
-//             return d.weight / 4;
-//         });
-
-//     /* 
-//     DRAW THE CIRCLES FOR THE NODES
-//     Why do we draw these after the links?
-//     */
-    var node = svg.append("g")
+var node = svg.append("g")
         .selectAll("circle")
         .data(data.nodes)
         .enter()
@@ -441,89 +420,129 @@ console.log(data.links)
         .attr("stroke-width", 0.5)
         .attr("r", 8)
         .attr("fill", function (d) {
-            return colorScale(d.zone)
+            return colorScale(d.end_location)
         })
 
-//     /* 
-//     MAKE A LEGEND
-//     */
-//     // create a group for our legend
-    var legend = svg.append("g")
-        .attr("class", "legend")
-        .attr("width", 200)
-        .attr("height", 400)
-        .attr("transform", `translate(50,50)`);
+// //     /* ADD A TOOLTIP */
+var tooltip = d3.select("#my_dataviz")
+.append("div")
+.attr("class", "tooltip");
 
-    // add a legend title
-    legend.append("text")
-        .attr("x", 10)
-        .attr("y", 0)
-        .text("Character zone")
+node.on("mouseover", function (e, d) {
+var cx = d.x + 20;
+var cy = d.y - 10;
+console.log(d)
 
-    // for each color in our domain, add a dot and label
-    colorScale.domain().forEach((d, i) => {
-        legend.append("circle")
-            .attr("cx", 10)
-            .attr("cy", ((i + 1) * 20) - 5)
-            .attr("r", 5)
-            .attr("fill", colorScale(d));
+tooltip.style("visibility", "visible")
+    .style("left", cx + "px")
+    .style("top", cy + "px")
+    .text(d.person);
 
-        legend.append("text")
-            .attr("x", 20)
-            .attr("y", (i + 1) * 20)
-            .text(d);
-    })
+}).on("mouseout", function () {
+tooltip.style("visibility", "hidden");
+});
 
 //     /* 
-//     TICK THE SIMULATION 
-//     Each time the simulation iterates ("ticks"), we will
-//     update the positions of the nodes (circles) and links (lines)
-//     in the network
+//     INITIALIZE FORCE SIMULATION 
+//     Find a layout that you like by tweaking the parameters. 
+//     For a useful tool, see:
+//     https://bl.ocks.org/steveharoz/8c3e2524079a8c440df60c1ab72b5d03
 //     */
+const simulation = d3.forceSimulation(nodes)
+// .force("x", d3.forceX(40).strength(0.4).x(100))
+//   .force("y", d3.forceY(50).strength(0.3).y(100))
+  .velocityDecay(0.95)
+  .alphaTarget(0.000001)
+  .alphaDecay(0);
 
-    simulation.on("tick", function () {
-//         // link.attr("x1", function (d) { return d.source.x; })
-//         //     .attr("y1", function (d) { return d.source.y; })
-//         //     .attr("x2", function (d) { return d.target.x; })
-//         //     .attr("y2", function (d) { return d.target.y; });
+simulation.on("tick", () => {
+    if (simulation.alpha() < 0.05) {
+      simulation.alphaTarget(0.3).alphaDecay(0.0001);
+    } else {
+      simulation.alphaTarget(0.3).alphaDecay(0.00001);
+    }
+    // update node positions here
+function moveToClusters() {
+        simulation
+                .force("x", d3.forceX(40).strength(0.4).x(d => {
+    if (d.end_location_number === 1) {
+        return width * 0.2;
+    } else if (d.end_location_number === 2) {
+        return width * 0.4;
+    } else if (d.end_location_number === 3) {
+        return width * 0.6;
+    } else {
+        return width * 0.8;
+    }
+}))
+  .force("y", d3.forceY(50).strength(0.3).y(300))
+        // .force("center", d3.forceCenter(width / 2, height / 2))
+        // .force("charge", d3.forceManyBody().strength(5))
+        .force("collide", d3.forceCollide(13).radius(10).strength(0.6))
+        .alpha(.05)
+        .alphaDecay(0.000005)
+		.velocityDecay(0.8);
+        // .force("x", d3.forceX(40).strength(0.4).x(d => {
+        //     if (d.end_location_number === 1) {
+        //         return width * 0.2;
+        //     } else if (d.end_location_number === 2) {
+        //         return width * 0.4;
+        //     } else if (d.end_location_number === 3) {
+        //         return width * 0.6;
+        //     } else {
+        //         return width * 0.8;
+        //     }
+        //   }))
+        //   .force("y", d3.forceY(50).strength(0.6).y(300))
+        //     // .force("center", d3.forceCenter(width / 2, height / 2))
+        //  .force("collide", d3.forceCollide().radius(10).strength(0.4))
+        //  .velocityDecay(0.99)
+        //   .alphaTarget(0.3)
+        //   .alphaDecay(0.000001)
+        //   .restart();
+      }
 
-        node
-            .attr("cx", function (d) { return d.x; })
-            .attr("cy", function (d) { return d.y; });
 
-    });
+    
+    
+function ticked() {
+    moveToClusters();
+    node
+      .attr("cx", (d) => d.x)
+      .attr("cy", (d) => d.y);
+  }
+    simulation.on("tick", ticked);
+      
+  });
 
-//     /* ADD A TOOLTIP */
-    var tooltip = d3.select("#my_dataviz")
-        .append("div")
-        .attr("class", "tooltip");
+//   function clusterX(cluster) {
+//     switch (cluster) {
+//       case 0:
+//         return width / 4;
+//       case 1:
+//         return (3 * width) / 4;
+//       case 2:
+//         return width / 4;
+//       case 3:
+//         return (3 * width) / 4;
+//     }
+//   }
+  
+//   function clusterY(cluster) {
+//     switch (cluster) {
+//       case 0:
+//         return height / 4;
+//       case 1:
+//         return height / 4;
+//       case 2:
+//         return (3 * height) / 4;
+//       case 3:
+//         return (3 * height) / 4;
+//     }
+//   }
 
-    node.on("mouseover", function (e, d) {
-        var cx = d.x + 20;
-        var cy = d.y - 10;
-        console.log(d)
 
-        tooltip.style("visibility", "visible")
-            .style("left", cx + "px")
-            .style("top", cy + "px")
-            .text(d.character);
 
-    }).on("mouseout", function () {
-        tooltip.style("visibility", "hidden");
-    });
+
 
 })
-  
- 
-  
-//     function ticked() {
-//       node.attr("cx", function(d) { return d.x; })
-//           .attr("cy", function(d) { return d.y; });
-  
-//       link.attr("x1", function(d) { return d.source.x; })
-//           .attr("y1", function(d) { return d.source.y; })
-//           .attr("x2", function(d) { return d.target.x; })
-//           .attr("y2", function(d) { return d.target.y; });
-//     }
-    
-

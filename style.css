@@ -107,18 +107,18 @@ body {
   font-size: 10px;
   margin-left: 150px;
 }
-/* .tooltip {
+.tooltip {
     display: inline;
     position: fixed;
-  } */
+  }
 
   
-  #chart {
+  #my_dataviz {
     width: 100%;
     height: 100vh;
   } 
   
-  .tooltip {
+  /* .tooltip {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -136,4 +136,4 @@ body {
   line {
     stroke: #999;
     stroke-opacity: 0.3;
-  }
+  } */
