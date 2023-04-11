@@ -124,8 +124,17 @@ body {
   .gradient2 {
     background: linear-gradient(to right, #570211 50%, #7e3110 50%);
   }
-  
+  /* #361c0e #570211 #7e3110", "#004540", "#032c4d", "#360825" */
+  .node.gradient1 {
+    stroke: #032c4d;
+    stroke-width: 5px;
+  }
 
+  .node.gradient2 {
+    stroke: #032c4d;
+    stroke-width: 5px;
+    fill: #7e3110;
+  }
   /* .tooltip {
     position: absolute;
     left: 0px;

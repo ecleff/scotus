@@ -390,14 +390,63 @@ d3.json("thomas_ppl.json").then(function (data) {
             .data(data.nodes)
             .enter()
             .append("circle")
+            // .append("image")
+            // .attr("xlink:href", d => d.img)
             .attr("class", function(d) { return "node " + d.class; })
             .attr("stroke", "#fff")
             .attr("stroke-width", 0.5)
             .attr("r", 8)
+            .style("opacity", "0.9")
+            // .attr("x", 100)
+            // .attr("y", 40)
             .attr("fill", function (d) {
                 return colorScale(d.group)
             })
+            
+
+    // Text labels
+    // create a new SVG text element for the node with ID "node1"
+var node1Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Judges")
+.attr("x", 150)
+.attr("y", 400);
+
+var node2Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Solicitors General")
+.attr("x", 270)
+.attr("y", 400);
+
+var node3Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Private Practice")
+.attr("x", 450)
+.attr("y", 400);
+
+var node4Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Academia")
+.attr("x", 580)
+.attr("y", 400);
     
+var node5Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Trump Admin")
+.attr("x", 650)
+.attr("y", 400);
+
+var node6Text = svg.append("text")
+.attr("class", "nodeText")
+.attr("dy", ".35em")
+.text("Other")
+.attr("x", 850)
+.attr("y", 400);
     // //     /* ADD A TOOLTIP */
     var tooltip = d3.select("#my_dataviz")
     .append("div")
@@ -416,7 +465,7 @@ d3.json("thomas_ppl.json").then(function (data) {
         .style("border-radius", "5px")
         .style("padding", "10px")
         .html(`${d.person}<br />
-        Role: ${d.group} `
+        Field: ${d.group} `
         );
         // .text(d.person);
     
@@ -445,7 +494,19 @@ d3.json("thomas_ppl.json").then(function (data) {
         }
         // update node positions here
     function moveToClusters() {
-            simulation
+        node1Text.attr("x", 150)
+            .attr("y", 350)
+        node2Text.attr("x", 310)
+            .attr("y", 350)
+        node3Text.attr("x", 465)
+            .attr("y", 400)
+        node4Text.attr("x", 580)
+            .attr("y", 350)
+        node5Text.attr("x", 670)
+            .attr("y", 350)
+        node6Text.attr("x", 800)
+            .attr("y", 350)
+        simulation
                     .force("x", d3.forceX(40).strength(0.84).x(d => {
         if (d.end_location_number === 1) {
             return width * 0.2;
@@ -465,7 +526,7 @@ d3.json("thomas_ppl.json").then(function (data) {
             return width * 0.9;
         }
     }))
-      .force("y", d3.forceY(50).strength(0.2).y(300))
+      .force("y", d3.forceY(50).strength(0.2).y(275))
             // .force("center", d3.forceCenter(width / 2, height / 2))
             // .force("charge", d3.forceManyBody().strength(5))
             .force("collide", d3.forceCollide(13).radius(10).strength(0.6))
@@ -504,7 +565,24 @@ d3.json("thomas_ppl.json").then(function (data) {
         simulation.on("tick", ticked);
           
       });
-    
+    // text
+//     var node1Text = svg.append("text")
+//     .attr("class", "nodeText")
+//     .attr("dy", ".35em")
+//     .text("This is node 1")
+//     .attr("x", 20)
+//     .attr("y", 200);
+  
+//   // update the position of the text element when the node moves
+//   force.on("tick", function() {
+//     node1Text.attr("x", 20)
+//       .attr("y", 200);
+//   });
+
+
+
+
+
     //   function clusterX(cluster) {
     //     switch (cluster) {
     //       case 0:
@@ -531,5 +609,16 @@ d3.json("thomas_ppl.json").then(function (data) {
     //     }
     //   }
 
-    
+
+//     // attempting semi circles
+//     // Array of names to include
+// var includedNames = ["Allison Hartwell Eid*", "James C. Ho*", "Tyler R. Green*","G. Britton Lucas*","Kasdin M. Mitchell*","Gilbert C. Dickey*"];
+// svg.selectAll("circle")
+//   .data(nodes.filter(function(d) {
+//     return includedNames.includes(d.name);
+//   }))
+//   .enter()
+//   .append("circle")
+//   .attr("fill-opacity", 0.5);
+
     })
