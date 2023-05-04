@@ -655,9 +655,7 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
       .attr("cx", function(d) { return d.start_location_x; })
       .attr("cy", function(d) { return d.start_location_y; })
       .attr("r", r)
-      .attr("fill", function (d) {
-                        return colorScale(d.group)
-                    })
+      .attr("fill", "grey")
       .attr("stroke","black")
       .on("mouseover", function(event, d) {
         d3.select(this).classed("bigger", true);
@@ -673,6 +671,9 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
     circles.transition()
     .transition()
     .duration(3000)
+    .attr("fill", function (d) {
+      return colorScale(d.group)
+  })
     .attr("cx", function(d) { return d.end_location_x; })
     .attr("cy", function(d) { return d.end_location_y; });
 
