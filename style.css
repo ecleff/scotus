@@ -156,8 +156,54 @@ body {
   .bigger {
     r: 15px;
   }
-  
-  /* .tooltip {
+  #judges {
+    position: absolute;
+    top: 450px;
+    left: 50px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  #trump-admin {
+    position: absolute;
+    top: 450px;
+    left: 190px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  #private-practice {
+    position: absolute;
+    top: 450px;
+    left: 370px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  #academia {
+    position: absolute;
+    top: 450px;
+    left: 550px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  #sol-gen {
+    position: absolute;
+    top: 450px;
+    left: 680px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  #other {
+    position: absolute;
+    top: 450px;
+    left: 800px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+ /* .tooltip {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -170,9 +216,9 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px 20px 10px 20px;
     border-radius: 10px;
-  }
+  } */
 
   line {
     stroke: #999;
     stroke-opacity: 0.3;
-  } */
+  } 
