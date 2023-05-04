@@ -108,9 +108,15 @@ body {
   margin-left: 150px;
 }
 .tooltip {
-    display: inline;
-    position: fixed;
-  }
+  display: inline;
+   /* position: fixed; */ 
+   position: absolute;
+   padding: 10px;
+   /* background-color: black; */
+   /* border: 1px solid #000; */
+   border-radius: 5px;
+   pointer-events: none;
+ }
 
   #my_dataviz {
     width: 100%;
@@ -135,6 +141,22 @@ body {
     stroke-width: 5px;
     fill: #7e3110;
   }
+
+  .bubbles {
+    stroke-width: 1px;
+  
+  }
+  
+  .bubbles:hover {
+    stroke: black;
+    stroke-width:4px;
+    r: 15px; /* add this to increase the radius on hover */
+  }
+  
+  .bigger {
+    r: 15px;
+  }
+  
   /* .tooltip {
     position: absolute;
     left: 0px;

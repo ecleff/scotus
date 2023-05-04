@@ -1,0 +1,1173 @@
+{"nodes":[
+  {
+    "": 7,
+    "index": 7,
+    "group": "Judges",
+    "person": "Naomi Rao",
+    "end_location_number": 1,
+    "class": "",
+    "img": "/Formatted/Naomi Rao.png"
+  },
+  {
+    "": 16,
+    "index": 16,
+    "group": "Judges",
+    "person": "Kenton J. Skarin",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 6,
+    "index": 6,
+    "group": "Judges",
+    "person": "Eric D. Miller",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 5,
+    "index": 5,
+    "group": "Judges",
+    "person": "Carl J. Nichols",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 13,
+    "index": 13,
+    "group": "Judges",
+    "person": "Adam M. Conrad",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 11,
+    "index": 11,
+    "group": "Judges",
+    "person": "Martha M. Pacold",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 10,
+    "index": 10,
+    "group": "Judges",
+    "person": "David Stras",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 15,
+    "index": 15,
+    "group": "Judges",
+    "person": "Liam P. Hardy",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 12,
+    "index": 12,
+    "group": "Judge // Solicitors General",
+    "person": "James C. Ho*",
+    "end_location_number": 2,
+    "class": "gradient1",
+    "img": ""
+  },
+  {
+    "": 17,
+    "index": 17,
+    "group": "Judges",
+    "person": "Andrew Pinson",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 18,
+    "index": 18,
+    "group": "Judges",
+    "person": "Kathryn Kimball Mizelle",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 9,
+    "index": 9,
+    "group": "Judges",
+    "person": "Emin Toro",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 4,
+    "index": 4,
+    "group": "Judges",
+    "person": "Thomas Rex Lee",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 14,
+    "index": 14,
+    "group": "Judges",
+    "person": "Allison Jones Rushing",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 1,
+    "index": 1,
+    "group": "Judges",
+    "person": "Gregory G. Katsas",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 2,
+    "index": 2,
+    "group": "Judges",
+    "person": "Gregory E. Maggs",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 3,
+    "index": 3,
+    "group": "Judge // Solicitors General",
+    "person": "Allison Hartwell Eid*",
+    "end_location_number": 2,
+    "class": "gradient1",
+    "img": ""
+  },
+  {
+    "": 8,
+    "index": 8,
+    "group": "Judges",
+    "person": "Margaret A. Ryan",
+    "end_location_number": 1,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 47,
+    "index": 154,
+    "group": "Private Practice",
+    "person": "Adam K. Mortara",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 92,
+    "index": 199,
+    "group": "Private Practice",
+    "person": "Amy R. Upshaw",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 120,
+    "index": 285,
+    "group": "Solicitors General",
+    "person": "Andrew N. Ferguson",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 104,
+    "index": 211,
+    "group": "Academia",
+    "person": "Ann M. Scarlett",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 125,
+    "index": 341,
+    "group": "Other",
+    "person": "Arnon D. Siegel",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 38,
+    "index": 145,
+    "group": "Private Practice",
+    "person": "Arthur S. Long",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 53,
+    "index": 160,
+    "group": "Private Practice",
+    "person": "Ashley E. Johnson",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 119,
+    "index": 284,
+    "group": "Solicitors General",
+    "person": "Austin L. Raynor",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 68,
+    "index": 175,
+    "group": "Private Practice",
+    "person": "Brandt Arthur Leibe",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 36,
+    "index": 143,
+    "group": "Private Practice",
+    "person": "Brenden P. Cullen",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 65,
+    "index": 172,
+    "group": "Private Practice",
+    "person": "Brian C. Lea",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 69,
+    "index": 176,
+    "group": "Private Practice",
+    "person": "Brian D. Schmalzbach",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 89,
+    "index": 196,
+    "group": "Private Practice",
+    "person": "Brian Lipshutz",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 60,
+    "index": 167,
+    "group": "Private Practice",
+    "person": "Brian P. Morrissey Jr.",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 82,
+    "index": 189,
+    "group": "Private Practice",
+    "person": "Brittany Lane Kubisch",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 43,
+    "index": 150,
+    "group": "Private Practice",
+    "person": "C. Kevin Marshall",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 101,
+    "index": 208,
+    "group": "Academia",
+    "person": "Caleb Nelson",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 84,
+    "index": 191,
+    "group": "Private Practice",
+    "person": "Cameron Thomas Norris",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 88,
+    "index": 195,
+    "group": "Private Practice",
+    "person": "Caroline Cook Lindsay",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 133,
+    "index": 349,
+    "group": "Other",
+    "person": "Carrie Severino",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 52,
+    "index": 159,
+    "group": "Private Practice",
+    "person": "Chantel L. Febus",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 94,
+    "index": 201,
+    "group": "Private Practice",
+    "person": "Christopher C. Goodnow",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 85,
+    "index": 192,
+    "group": "Private Practice",
+    "person": "Christopher Ernest Mills",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 19,
+    "index": 69,
+    "group": "Trump Admin",
+    "person": "Christopher Landau",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 57,
+    "index": 164,
+    "group": "Private Practice",
+    "person": "Claire J. Evans",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 34,
+    "index": 141,
+    "group": "Private Practice",
+    "person": "Craig S. Primis",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 109,
+    "index": 274,
+    "group": "Solicitors General",
+    "person": "Dan Himmelfarb",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 136,
+    "index": 352,
+    "group": "Other",
+    "person": "David A. Bragdon",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 28,
+    "index": 78,
+    "group": "Trump Admin",
+    "person": "David M. Morrell",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 48,
+    "index": 155,
+    "group": "Private Practice",
+    "person": "Diane L. McGimsey",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 115,
+    "index": 280,
+    "group": "Solicitors General",
+    "person": "Elbert Lin",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 59,
+    "index": 166,
+    "group": "Private Practice",
+    "person": "Elizabeth P. Papez",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 22,
+    "index": 72,
+    "group": "Trump Admin",
+    "person": "Eric A. Grant",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 32,
+    "index": 139,
+    "group": "Private Practice",
+    "person": "Eric C. Nelson",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 56,
+    "index": 163,
+    "group": "Private Practice",
+    "person": "Eric D. McArthur",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 39,
+    "index": 146,
+    "group": "Private Practice",
+    "person": "Eric J. Kadel Jr.",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 35,
+    "index": 142,
+    "group": "Private Practice",
+    "person": "Erik S. Jaffe",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 72,
+    "index": 179,
+    "group": "Private Practice // Solicitors General",
+    "person": "G. Britton Lucas*",
+    "end_location_number": 4,
+    "class": "gradient2",
+    "img": ""
+  },
+  {
+    "": 83,
+    "index": 190,
+    "group": "Private Practice // Solicitors General",
+    "person": "Gilbert C. Dickey*",
+    "end_location_number": 4,
+    "class": "gradient2",
+    "img": ""
+  },
+  {
+    "": 81,
+    "index": 188,
+    "group": "Private Practice",
+    "person": "Gregory F. Miller",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 110,
+    "index": 275,
+    "group": "Solicitors General",
+    "person": "Gregory S. Coleman",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 74,
+    "index": 181,
+    "group": "Private Practice",
+    "person": "Haley N. Proctor",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 50,
+    "index": 157,
+    "group": "Private Practice",
+    "person": "Hannah Clayson Smith",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 27,
+    "index": 77,
+    "group": "Trump Admin",
+    "person": "Heath P. Tarbert",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 33,
+    "index": 140,
+    "group": "Private Practice",
+    "person": "Helgi C. Walker",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 111,
+    "index": 276,
+    "group": "Solicitors General",
+    "person": "Henry C. Whitaker",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 96,
+    "index": 203,
+    "group": "Private Practice",
+    "person": "J. Manuel Valle",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 93,
+    "index": 200,
+    "group": "Private Practice",
+    "person": "Jack L. Millman",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 79,
+    "index": 186,
+    "group": "Private Practice",
+    "person": "Jacob T. Spencer",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 31,
+    "index": 138,
+    "group": "Private Practice",
+    "person": "James E. Gauch",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 135,
+    "index": 351,
+    "group": "Other",
+    "person": "Janet Y. Galeria",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 112,
+    "index": 277,
+    "group": "Solicitors General",
+    "person": "Jeff Wall",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 29,
+    "index": 79,
+    "group": "Trump Admin",
+    "person": "Jennifer Bandy",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 51,
+    "index": 158,
+    "group": "Private Practice",
+    "person": "Jennifer K. Hardy",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 105,
+    "index": 212,
+    "group": "Academia",
+    "person": "Jennifer L. Mascott",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 98,
+    "index": 205,
+    "group": "Academia",
+    "person": "Jim Chen",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 26,
+    "index": 76,
+    "group": "Trump Admin",
+    "person": "John A. Eisenberg",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 23,
+    "index": 73,
+    "group": "Trump Admin",
+    "person": "John C. Yoo",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 55,
+    "index": 162,
+    "group": "Private Practice",
+    "person": "John D. Adams",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 129,
+    "index": 345,
+    "group": "Other",
+    "person": "John Eastman",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 37,
+    "index": 144,
+    "group": "Private Practice",
+    "person": "John F. Wood",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 54,
+    "index": 161,
+    "group": "Private Practice",
+    "person": "John M. Hughes",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 77,
+    "index": 184,
+    "group": "Private Practice",
+    "person": "Jonathan D. Urick",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 45,
+    "index": 152,
+    "group": "Private Practice",
+    "person": "Jonathan F. Cohn",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 124,
+    "index": 289,
+    "group": "Solicitors General",
+    "person": "Joshua M. Divine",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 30,
+    "index": 137,
+    "group": "Private Practice",
+    "person": "Karl M. Tilleman",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 80,
+    "index": 187,
+    "group": "Private Practice // Solicitors General",
+    "person": "Kasdin M. Mitchell*",
+    "end_location_number": 4,
+    "class": "gradient2",
+    "img": ""
+  },
+  {
+    "": 24,
+    "index": 74,
+    "group": "Trump Admin",
+    "person": "Kate Comerford Todd",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 71,
+    "index": 178,
+    "group": "Private Practice",
+    "person": "Katherin C. Yarger",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 41,
+    "index": 148,
+    "group": "Private Practice",
+    "person": "Kristen L. Silverberg",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 126,
+    "index": 342,
+    "group": "Other",
+    "person": "Laura Ingraham",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 90,
+    "index": 197,
+    "group": "Private Practice",
+    "person": "Laura Wolk Slavis",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 127,
+    "index": 343,
+    "group": "Other",
+    "person": "Laurie Allen Gallancy",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 132,
+    "index": 348,
+    "group": "Other",
+    "person": "Leila K. Mongan",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 95,
+    "index": 202,
+    "group": "Private Practice",
+    "person": "M. Scott Proctor",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 87,
+    "index": 194,
+    "group": "Private Practice",
+    "person": "Madeline Ward Lansky",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 106,
+    "index": 213,
+    "group": "Academia",
+    "person": "Marah C. Smith",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 76,
+    "index": 183,
+    "group": "Private Practice",
+    "person": "Marisa C. Maleck",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 123,
+    "index": 288,
+    "group": "Solicitors General",
+    "person": "Matt Rice",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 63,
+    "index": 170,
+    "group": "Private Practice",
+    "person": "Matthew A. Fitzgerald",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 131,
+    "index": 347,
+    "group": "Other",
+    "person": "Matthew B. Berry",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 66,
+    "index": 173,
+    "group": "Private Practice",
+    "person": "Matthew B. Nicholson",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 128,
+    "index": 344,
+    "group": "Other",
+    "person": "Michael E. O'Neill",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 64,
+    "index": 171,
+    "group": "Private Practice",
+    "person": "Michelle S. Stratton",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 103,
+    "index": 210,
+    "group": "Academia",
+    "person": "Nicole Stelle Garnett",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 21,
+    "index": 71,
+    "group": "Trump Admin",
+    "person": "Patrick F. Philbin",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 40,
+    "index": 147,
+    "group": "Private Practice",
+    "person": "Patrick L. O'Daniel",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 58,
+    "index": 165,
+    "group": "Private Practice",
+    "person": "Patrick N. Strawbridge",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 102,
+    "index": 209,
+    "group": "Academia",
+    "person": "Peter B. Rutledge",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 91,
+    "index": 198,
+    "group": "Private Practice",
+    "person": "Philip M. Cooper",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 70,
+    "index": 177,
+    "group": "Private Practice",
+    "person": "Rebekah Perry Ricketts",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 49,
+    "index": 156,
+    "group": "Private Practice",
+    "person": "Richard M. Corn",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 107,
+    "index": 214,
+    "group": "Academia",
+    "person": "Robert J. Leider",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 67,
+    "index": 174,
+    "group": "Private Practice",
+    "person": "Robert L. Dunn",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 73,
+    "index": 180,
+    "group": "Private Practice",
+    "person": "Robert N. Stander",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 86,
+    "index": 193,
+    "group": "Private Practice",
+    "person": "Russell Balikian",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 100,
+    "index": 207,
+    "group": "Academia",
+    "person": "Saikrishna B. Prakash",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 75,
+    "index": 182,
+    "group": "Private Practice",
+    "person": "Sarah M. Harris",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 118,
+    "index": 283,
+    "group": "Solicitors General",
+    "person": "Scott G. Stewart",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 25,
+    "index": 75,
+    "group": "Trump Admin",
+    "person": "Sigal Mandelker",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 44,
+    "index": 151,
+    "group": "Private Practice",
+    "person": "Stanford I. Weisburst",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 99,
+    "index": 206,
+    "group": "Academia",
+    "person": "Stephen F. Smith",
+    "end_location_number": 6,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 108,
+    "index": 273,
+    "group": "Solicitors General",
+    "person": "Stephen R. McAllister",
+    "end_location_number": 3,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 20,
+    "index": 70,
+    "group": "Trump Admin",
+    "person": "Steven G. Bradbury",
+    "end_location_number": 7,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 97,
+    "index": 204,
+    "group": "Private Practice",
+    "person": "Steven J. Lindsay",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 42,
+    "index": 149,
+    "group": "Private Practice",
+    "person": "Steven T. Cottreau",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 78,
+    "index": 185,
+    "group": "Private Practice",
+    "person": "Taylor A.R. Meehan",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 61,
+    "index": 168,
+    "group": "Private Practice // Solicitors General",
+    "person": "Tyler R. Green*",
+    "end_location_number": 4,
+    "class": "gradient2",
+    "img": ""
+  },
+  {
+    "": 46,
+    "index": 153,
+    "group": "Private Practice",
+    "person": "Victoria Dorfman",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 130,
+    "index": 346,
+    "group": "Other",
+    "person": "Wendy E. Long",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 62,
+    "index": 169,
+    "group": "Private Practice",
+    "person": "William R. Peterson",
+    "end_location_number": 5,
+    "class": "",
+    "img": ""
+  },
+  {
+    "": 134,
+    "index": 350,
+    "group": "Other",
+    "person": "William S. Consovoy",
+    "end_location_number": 8,
+    "class": "",
+    "img": ""
+  }
+]
+}
