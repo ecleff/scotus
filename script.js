@@ -1,7 +1,8 @@
+
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 40, left: 100},
+const margin = {top: 10, right: 30, bottom: 30, left: 30},
     width = 1200 - margin.left - margin.right,
-    height = 1000 - margin.top - margin.bottom;
+    height = 800 - margin.top - margin.bottom;
 
 // // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
@@ -9,8 +10,16 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
         .attr("width", width)
         .attr("height", height)
         // nodeRadius = 20;
-        
-
+  
+// initializing scrollama
+const scroller = scrollama();// using d3 for convenience, and storing a selected elements
+   
+// using d3 for convenience, and storing a selected elements
+// var $container = d3.select('#scroll');
+// var $graphic = container.select('.scroll__graphic');
+// var $chart = graphic.select('.my_dataviz');
+// var $text = container.select('.scroll__text');
+// var $step = text.selectAll('.step');
 
 // Test Networks - WORKS
 // d3.json("test.json").then(function (data) {
@@ -595,6 +604,9 @@ const margin = {top: 10, right: 30, bottom: 40, left: 100},
 
 // test with manual positions
 
+
+
+
 d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
   
   data.forEach(function (d) {
@@ -612,6 +624,8 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
             .range(["#361c0e", "#570211", "#7e3110", "#004540", "#032c4d", "#360825"]);
         // console.log(uniqueZones)
     // "Judges","Trump Admin","Private Practice", "Academia", "Solicitors General", "Other"
+
+
 
 
     // tooltip
@@ -647,6 +661,17 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
     tooltip.transition().duration(200).style("opacity", 0);
   };
 
+
+  // setting up scrollama
+  var scroller = scrollama();
+  scroller.setup({
+    step: ".trigger",
+    offset: 0.5,
+    duration: 1000,
+    threshold: 4
+  });
+
+  // setting up original location
   var r = 10;
     var circles = svg.selectAll("circle")
       .data(data)
@@ -668,25 +693,59 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
       });
 
     circles.attr("class","bubbles")
-    circles.transition()
-    .transition()
-    .duration(3000)
-    .attr("fill", function (d) {
-      return colorScale(d.group)
-  })
-    .attr("cx", function(d) { return d.end_location_x; })
-    .attr("cy", function(d) { return d.end_location_y; });
 
- circles.each(function(d) {
+    scroller.onStepEnter(function (response) {
+      if (response.index === 0) {
+        var r = 10;
+        var circles = svg.selectAll("circle")
+          .data(data);
+    
+        circles.transition()
+          .duration(3000)
+          .attr("fill", function (d) {
+            return colorScale(d.group)
+          })
+          .attr("cx", function(d) { return d.end_location_x; })
+          .attr("cy", function(d) { return d.end_location_y; });
+    
+        circles.each(function(d) {
+          d3.select(this)
+            .select("image")
+            .transition()
+            .duration(3000)
+            .attr("x", function(d) { return d.end_location_x - r; }) // center the image horizontally
+            .attr("y", function(d) { return d.end_location_y - r; }); // center the image vertically
+        });
+      }
+    });
+    
+    
+//     circles.transition()
+//     .transition()
+//     .duration(3000)
+//     .attr("fill", function (d) {
+//       return colorScale(d.group)
+//   })
+//     .attr("cx", function(d) { return d.end_location_x; })
+//     .attr("cy", function(d) { return d.end_location_y; });
+
+//  circles.each(function(d) {
         
-        d3.select(this)
-          .append("image")
-          .attr("xlink:href", "Formatted.nosync/" + d.image_filename)
-          .attr("width", r)
-          .attr("height", r)
-          .attr("x", function(d) { return d.end_location_x - r; }) // center the image horizontally
-          .attr("y", function(d) { return d.end_location_y - r; }); // center the image vertically
-      });
+//         d3.select(this)
+//           .append("image")
+//           .attr("xlink:href", "Formatted.nosync/" + d.image_filename)
+//           .attr("width", r)
+//           .attr("height", r)
+//           .attr("x", function(d) { return d.end_location_x - r; }) // center the image horizontally
+//           .attr("y", function(d) { return d.end_location_y - r; }); // center the image vertically
+//       });
+
+
+
+
+
+
+
 
       // circles.each(function(d) {
       //   var image = d3.select(this)

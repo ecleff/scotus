@@ -222,3 +222,41 @@ body {
     stroke: #999;
     stroke-opacity: 0.3;
   } 
+
+
+  /* scroll */
+  #scroll {
+    position: relative;
+  }
+
+  .scroll__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll.trigger{
+    position: sticky;
+  }
+  .scroll__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .scroll__graphic .chart {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
