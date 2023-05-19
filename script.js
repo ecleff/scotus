@@ -1,19 +1,320 @@
 
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 30, left: 30},
-    width = 1200 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+const margin = {top: 10, right: 10, bottom: 30, left: 10},
+containerWidth = document.getElementById("my_dataviz").clientWidth,
+containerHeight= 450 - margin.top - margin.bottom;
+
+console.log(containerWidth)
+
+// calculate the actual width and height of the SVG based on the container
+const width = containerWidth - margin.left - margin.right;
+const height = containerHeight - margin.top - margin.bottom;
+
 
 // // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
         .append("svg")
-        .attr("width", width)
-        .attr("height", height)
+        .attr("width", "100%") // Set the width to 100%
+        .attr("height", "100%") // Set the height to 100%
+        .attr("viewBox", `0 0 ${containerWidth} ${containerHeight}`) // Set the viewBox to maintain the aspect ratio
+        .append("g")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
         // nodeRadius = 20;
-  
+
+// setting up SVG object for judges chapter
+  const chapterHeight = 50- margin.top - margin.bottom
+  const heightC = chapterHeight - margin.top - margin.bottom
+  var judgesSvg = d3.select("#judges_svg")
+    .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  // var judgesSvg = d3.select("#scroll2")
+  // .select("#judges_svg")
+  // .append("svg")
+  // .attr("width", "100%")
+  // .attr("height", "200px")
+  // .attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+  // .append("g")
+  // .attr("transform", `translate(${margin.left}, ${margin.top})`);
+// setting up SVG object for trump admin chapter
+var trumpAdminSvg = d3.select("#trump_admin_svg")
+  .append("svg")
+  .attr("width", "100%")
+  .attr("height", "100%")
+  .attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+  .append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+
+  // setting up SVG object for sol gen chapter
+var solGenSvg = d3.select("#sol_gen_svg")
+.append("svg")
+.attr("width", "100%")
+.attr("height", "100%")
+.attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+
+// setting up SVG object for private practice chapter
+
+var privatePracticeSvg = d3.select("#private_practice_svg")
+.append("svg")
+.attr("width", "100%")
+.attr("height", "100%")
+.attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// setting up SVG object for academia chapter
+var academiaSvg = d3.select("#academia_svg")
+.append("svg")
+.attr("width", "100%")
+.attr("height", "100%")
+.attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// setting up SVG object for outliers chapter
+var otherSvg = d3.select("#other_svg")
+.append("svg")
+.attr("width", "100%")
+.attr("height", "100%")
+.attr("viewBox", `0 0 ${containerWidth} ${chapterHeight}`) // Set the viewBox to maintain the aspect ratio
+.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
 // initializing scrollama
 const scroller = scrollama();// using d3 for convenience, and storing a selected elements
+
+// Get the button element using its ID
+// Get all the buttons using their IDs
+var judgesButton = document.getElementById("judges-button");
+var trumpAdminButton = document.getElementById("trump-admin-button");
+var privatePracticeButton = document.getElementById("private-practice-button");
+var academiaButton = document.getElementById("academia-button");
+var solGenButton = document.getElementById("sol-gen-button");
+var otherButton = document.getElementById("other-button");
+
+
+// Set the initial border style for all buttons
+// Set the initial style for all buttons
+var buttons = [
+  { element: judgesButton, color: "#f94144" },
+  { element: trumpAdminButton, color: "#f3722c" },
+  { element: privatePracticeButton, color: "#90be6d" },
+  { element: academiaButton, color: "#43aa8b" },
+  { element: solGenButton, color: "#f9c74f" },
+  { element: otherButton, color: "#577590" }
+];
+
+buttons.forEach(function(button) {
+  button.element.style.borderBottom = "3px solid " + button.color;
+  button.element.style.textDecoration = "none";
+  button.element.style.fontWeight = "normal";
+  button.element.style.backgroundColor = "#d1d6db";
+});
+// Add click event listeners to all buttons
+judgesButton.addEventListener("click", function() {
+  setButtonColors(judgesButton);
+})
+
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#judges-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(judgesButton);
+  }
+});
+
+trumpAdminButton.addEventListener("click", function() {
+  setButtonColors(trumpAdminButton);
+});
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#trump-admin-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(trumpAdminButton);
+  }
+});
+
+privatePracticeButton.addEventListener("click", function() {
+  setButtonColors(privatePracticeButton);
+});
+
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#private-practice-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(privatePracticeButton);
+  }
+});
+
+academiaButton.addEventListener("click", function() {
+  setButtonColors(academiaButton);
+});
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#academia-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(academiaButton);
+  }
+});
+
+solGenButton.addEventListener("click", function() {
+  setButtonColors(solGenButton);
+});
+
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#sol-gen-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(solGenButton);
+  }
+});
+
+
+otherButton.addEventListener("click", function() {
+  setButtonColors(otherButton);
+});
+
+window.addEventListener("scroll", function() {
+  // Get the section element that the button links to
+  const section = document.querySelector("#other-chapter");
+
+  // Get the position of the section relative to the viewport
+  const sectionPosition = section.getBoundingClientRect();
+
+  // Check if the section is in the viewport
+  if (sectionPosition.top >= 0 && sectionPosition.bottom <= window.innerHeight) {
+    setButtonColors(otherButton);
+  }
+});
+
+// Loop through the buttons array
+
+
+
+
+
+
+
+
+
+
+
+// Function to set the colors of all buttons
+function setButtonColors(clickedButton) {
+  var buttons = [
+    judgesButton,
+    trumpAdminButton,
+    privatePracticeButton,
+    academiaButton,
+    solGenButton,
+    otherButton
+  ];
+
+  buttons.forEach(function(button) {
+    // Set the borderBottom color for all buttons
+    // button.style.borderBottom = "2px solid red"; // Replace #000000 with your desired color
+    button.style.textDecoration = "none";
+    button.style.fontWeight = "normal";
+    button.style.backgroundColor = "#d1d6db";
+  });
+
+  // Change the style for the clicked button
+  clickedButton.style.textDecoration = "underline";
+  clickedButton.style.backgroundColor = "#c6cdd2";
+  clickedButton.style.fontWeight = "bold";
+}
+
+
+
+
+
+
+// Add an event listener to all scroll buttons
+var scrollButtons = document.querySelectorAll('.scroll-btn');
+scrollButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    // Remove active class from all scroll buttons
+    scrollButtons.forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    // Add active class to clicked button
+    button.classList.add('active');
+  });
+});
+
+
+// chapter blocks
+const chapterBlocks = document.querySelectorAll('.chapter_block');
+
+// var judgesButton = document.getElementById("judges-button");
+// var trumpButton = document.getElementById("trump-admin-button");
+// var privatepracticeButton = document.getElementById("private-practice-button");
+// var academiaButton = document.getElementById("academia-button");
+// var solgenButton = document.getElementById("sol-gen-button");
+// var otherButton = document.getElementById("other-button");
+
+// // Add an event listener to the button
+// judgesButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   judgesButton.style.backgroundColor = "red";
+// });
    
+// trumpButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   trumpButton.style.backgroundColor = "red";
+// });
+
+// privatepracticeButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   privatepracticeButton.style.backgroundColor = "red";
+// });
+
+// academiaButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   academiaButton.style.backgroundColor = "red";
+// });
+
+// solgenButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   solgenButton.style.backgroundColor = "red";
+// });
+
+// otherButton.addEventListener("click", function() {
+//   // Change the background color of the button when it is clicked
+//   otherButton.style.backgroundColor = "red";
+// });
+
 // using d3 for convenience, and storing a selected elements
 // var $container = d3.select('#scroll');
 // var $graphic = container.select('.scroll__graphic');
@@ -607,21 +908,30 @@ const scroller = scrollama();// using d3 for convenience, and storing a selected
 
 
 
-d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
+d3.csv("thomas_ppl_resp.csv").then(function(data) {
   
   data.forEach(function (d) {
     d["start_location_x"] = +d["start_location_x"];
     d["start_location_y"] = +d["start_location_y"];
     d["end_location_x"] = +d["end_location_x"];
     d["end_location_y"] = +d["end_location_y"];
+    d["chapter_start_x"] = +d["chapter_start_x"]
+    d["chapter_start_y"] = +d["chapter_start_y"]
+    d["chapter_end_x"] = +d["chapter_end_x"]
+    d["chapter_end_y"] = +d["chapter_end_y"]
+    // d.end_location_x = (+d.end_location_x / containerWidth) * 100;
+    // d.end_location_y = (+d.end_location_y / containerHeight) * 100;
+    // d.start_location_x = (+d.start_location_x / containerWidth) * 100;
+    // d.start_location_y = (+d.start_location_y / containerHeight) * 100;
 
   });
     console.log(data)
 
-        var colorScale = d3.scaleOrdinal()
+// color scale
+  var colorScale = d3.scaleOrdinal()
             // .domain(uniqueZones)
-            .domain(["Judges","Trump Admin","Private Practice", "Academia", "Solicitors General", "Other"])
-            .range(["#361c0e", "#570211", "#7e3110", "#004540", "#032c4d", "#360825"]);
+            .domain(["Judges","Trump Admin","Solicitors General", "Private Practice", "Academia", "Outliers and Activists"])
+            .range(["#f94144", "#f3722c", "#f9c74f", "#90be6d", "#43aa8b", "#577590"]);
         // console.log(uniqueZones)
     // "Judges","Trump Admin","Private Practice", "Academia", "Solicitors General", "Other"
 
@@ -629,37 +939,51 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
 
 
     // tooltip
-    const tooltip = d3
-    .select("#my_dataviz")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "1px")
-    .style("border-radius", "5px");
-    // .style("padding", "10px");
+ // tooltip
+ const tooltipSorting = d3
+ .select("#my_dataviz")
+ .append("div")
+ .style("opacity", 0)
+ .attr("class", "tooltip")
+ .style("background-color", "white")
+ .style("border", "solid")
+ .style("border-width", "1px")
+ .style("border-radius", "5px");
 
-  // A function that change this tooltip when the user hover a point.
-  // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-  const mouseover = function (event, d) {
-    tooltip.style("opacity", 1)
-  };
 
-  const mousemove = function (event, d) {
-    tooltip
-      .html(
-        `<img src="Formatted.nosync/${d.image_filename}" height="100" width="100"> <br>
-        ${d.person}`
-      )
-      .style("left", event.pageX + 10 + "px")
-      .style("top", event.pageY + 10 + "px");
-  };
 
-  // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-  const mouseleave = function (event, d) {
-    tooltip.transition().duration(200).style("opacity", 0);
-  };
+// A function that change this tooltip when the user hover a point.
+// Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
+const mouseover = function (event, d) {
+  tooltipSorting.style("opacity", 1);
+};
+
+const mousemove = function (event, d) {
+  tooltipSorting
+  .html(
+    ` ${d.person}`
+  )
+  .style("left", event.pageX + 30 + "px")
+  .style("top", event.pageY - 1200 + "px");
+
+};
+
+// A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+const mouseleave = function (event, d) {
+  tooltipSorting.transition().duration(200).style("opacity", 0);
+
+};
+
+var tooltipChapters = d3.select("body")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0)
+.attr("class", "tooltip")
+.style("background-color", "white")
+.style("border", "solid")
+.style("border-width", "1px")
+.style("border-radius", "5px");
+;
 
 
   // setting up scrollama
@@ -672,53 +996,583 @@ d3.csv("thomas_ppl_sort_test.csv").then(function(data) {
   });
 
   // setting up original location
-  var r = 10;
-    var circles = svg.selectAll("circle")
+  var r = 20;
+    // var circles = svg.selectAll("circle")
+    //   .data(data)
+    //   .enter()
+    //   .append("circle")
+    //   .attr("cx", function(d) { return d.start_location_x; })
+    //   .attr("cy", function(d) { return d.start_location_y; })
+    //   .attr("r", r)
+    //   .attr("fill", "grey")
+    //   .attr("stroke","black")
+    //   .on("mouseover", function(event, d) {
+    //     d3.select(this).classed("bigger", true);
+    //     mouseover(event, d);
+    //   })
+    //   .on("mousemove", mousemove)
+    //   .on("mouseleave", function(event, d) {
+    //     d3.select(this).classed("bigger", false);
+    //     mouseleave(event, d);
+    //   });
+
+    // circles.attr("class","bubbles")
+
+    var rectangles = svg.selectAll("rect")
       .data(data)
       .enter()
-      .append("circle")
-      .attr("cx", function(d) { return d.start_location_x; })
-      .attr("cy", function(d) { return d.start_location_y; })
-      .attr("r", r)
+      .append("rect")
+      .attr("x", (d) => `${d.start_location_x}%`) // x position of the rectangle
+      .attr("y", (d) => `${d.start_location_y}%`) // y position of the rectangle
+      .attr("width", r) // width of the rectangle
+      .attr("height", r) // height of the rectangle
       .attr("fill", "grey")
       .attr("stroke","black")
-      .on("mouseover", function(event, d) {
+      .on("mouseover touchstart", function(event, d) {
         d3.select(this).classed("bigger", true);
-        mouseover(event, d);
+        mouseover(event, d,tooltipSorting);
       })
-      .on("mousemove", mousemove)
-      .on("mouseleave", function(event, d) {
+      .on("mousemove touchmove", function (event, d) {
+        mousemove(event, d, tooltipSorting);
+      })
+      .on("mouseleave touchend", function(event, d) {
         d3.select(this).classed("bigger", false);
-        mouseleave(event, d);
+        mouseleave(event, d, tooltipSorting);
       });
 
-    circles.attr("class","bubbles")
+      rectangles.attr("class","bubbles")
+
+
+  // setting up original location for Judges chapter
+      var judges_rectangles = judgesSvg.selectAll("rect")
+      .data(data.filter(function(d) {
+        return d.group === "Judges";
+      }))
+      .enter()
+      .append("rect")
+      .attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+      .attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+      .attr("width", r) // width of the rectangle
+      .attr("height", r) // height of the rectangle
+      .attr("fill", function (d) {
+        return colorScale(d.group)
+      })
+      .attr("stroke","black")
+      .on("mouseover touchstart", function(event, d) {
+        d3.select(this).classed("bigger", true);
+        tooltipChapters.style("opacity", 1)
+        .style("left", (event.pageX +10) + "px") // Position the tooltip next to the mouse cursor
+        .style("top", (event.pageY -30) + "px");
+
+      })
+      .on("mousemove touchmove", function(event, d) {
+        tooltipChapters.style("opacity", 1)
+          .html(
+                  ` <b>${d.person}</b><br>
+                  Clerked for Thomas from ${d.clerk_term}<br>
+                  Graduated from ${d.law_school}<br>
+                  Appellate clerkship - ${d.appellate_clerkship}`
+                ) 
+            // Set the content of the tooltip to the person's name
+          .style("left", (event.pageX +10) + "px") // Position the tooltip next to the mouse cursor
+          .style("top", (event.pageY -30) + "px");
+      })
+      .on("mouseleave touchend", function(event, d) {
+        d3.select(this).classed("bigger", false);
+        tooltipChapters.transition().duration(200).style("opacity", 0);
+      });
+   
+  
+
+      judges_rectangles.attr("class","bubbles")
+
+      // images
+      var images = judgesSvg.selectAll("image")
+      .data(data.filter(function(d) {
+        return d.group === "Judges";
+      }))
+      .enter()
+      .append("image")
+      .attr("xlink:href", function(d) { return 'Square Judge Pictures.nosync/' + d.image_filename; })
+      .attr("x", (d) => `${d.chapter_start_x}%`) // x position of the image
+      .attr("y", (d) => `${d.chapter_start_y}%`) // y position of the image
+      .attr("width", r) // width of the image
+      .attr("height", r) // height of the image
+      .on("mouseover touchstart", function(event, d) {
+        d3.select(this).classed("bigger", true);
+        tooltipChapters.style("opacity", 1);
+
+      })
+      .on("mousemove touchmove", function(event, d) {
+        tooltipChapters.style("opacity", 1)
+          .html(
+                  ` <b>${d.person}</b><br>
+                  Clerked for Thomas from ${d.clerk_term}<br>
+                  Graduated from ${d.law_school}<br>
+                  Appellate clerkship - ${d.appellate_clerkship}`
+                ) 
+            // Set the content of the tooltip to the person's name
+          .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+          .style("top", (event.pageY +70) + "px");
+      })
+      .on("mouseleave touchend", function(event, d) {
+        d3.select(this).classed("bigger", false);
+        tooltipChapters.transition().duration(200).style("opacity", 0);
+      });
+   
+   
+
+// setting up original location for Trump Admin
+var trump_admin_rectangles = trumpAdminSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Trump Admin";
+}))
+.enter()
+.append("rect")
+.attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+.attr("width", r) // width of the rectangle
+.attr("height", r) // height of the rectangle
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("stroke","black")
+ .on("mouseover touchstart", function(event, d) {
+        d3.select(this).classed("bigger", true);
+        tooltipChapters.style("opacity", 1);
+
+      })
+      .on("mousemove touchmove", function(event, d) {
+        tooltipChapters.style("opacity", 1)
+          .html(
+                  ` <b>${d.person}</b><br>
+                 [Bio here]`
+                ) 
+            // Set the content of the tooltip to the person's name
+          .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+          .style("top", (event.pageY +70) + "px");
+      })
+      .on("mouseleave touchend", function(event, d) {
+        d3.select(this).classed("bigger", false);
+        tooltipChapters.transition().duration(200).style("opacity", 0);
+      });
+
+
+trump_admin_rectangles.attr("class","bubbles")
+
+
+// setting up original location for Sol Gen chapter
+var sol_gen_rectangles = solGenSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Solicitors General";
+}))
+.enter()
+.append("rect")
+.attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+.attr("width", r) // width of the rectangle
+.attr("height", r) // height of the rectangle
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("stroke","black")
+.on("mouseover touchstart", function(event, d) {
+  d3.select(this).classed("bigger", true);
+  tooltipChapters.style("opacity", 1);
+
+})
+.on("mousemove touchmove", function(event, d) {
+  tooltipChapters.style("opacity", 1)
+    .html(
+            ` <b>${d.person}</b><br>
+           [Bio here]`
+          ) 
+      // Set the content of the tooltip to the person's name
+    .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+    .style("top", (event.pageY +70) + "px");
+})
+.on("mouseleave touchend", function(event, d) {
+  d3.select(this).classed("bigger", false);
+  tooltipChapters.transition().duration(200).style("opacity", 0);
+});
+  
+sol_gen_rectangles.attr("class","bubbles")
+
+// setting up original location for Private Practice chapter
+var private_practice_rectangles = privatePracticeSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Private Practice";
+}))
+.enter()
+.append("rect")
+.attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+.attr("width", r) // width of the rectangle
+.attr("height", r) // height of the rectangle
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("stroke","black")
+.on("mouseover touchstart", function(event, d) {
+  d3.select(this).classed("bigger", true);
+  tooltipChapters.style("opacity", 1);
+
+})
+.on("mousemove touchmove", function(event, d) {
+  tooltipChapters.style("opacity", 1)
+    .html(
+            ` <b>${d.person}</b><br>
+           [Bio here]`
+          ) 
+      // Set the content of the tooltip to the person's name
+    .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+    .style("top", (event.pageY +70) + "px");
+})
+.on("mouseleave touchend", function(event, d) {
+  d3.select(this).classed("bigger", false);
+  tooltipChapters.transition().duration(200).style("opacity", 0);
+});
+  
+private_practice_rectangles.attr("class","bubbles")
+
+// setting up original location for Academia chapter
+
+var academia_rectangles = academiaSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Academia";
+}))
+.enter()
+.append("rect")
+.attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+.attr("width", r) // width of the rectangle
+.attr("height", r) // height of the rectangle
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("stroke","black")
+.on("mouseover touchstart", function(event, d) {
+  d3.select(this).classed("bigger", true);
+  tooltipChapters.style("opacity", 1);
+
+})
+.on("mousemove touchmove", function(event, d) {
+  tooltipChapters.style("opacity", 1)
+    .html(
+            ` <b>${d.person}</b><br>
+           [Bio here]`
+          ) 
+      // Set the content of the tooltip to the person's name
+    .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+    .style("top", (event.pageY +70) + "px");
+})
+.on("mouseleave touchend", function(event, d) {
+  d3.select(this).classed("bigger", false);
+  tooltipChapters.transition().duration(200).style("opacity", 0);
+});
+  
+academia_rectangles.attr("class","bubbles")
+
+// setting up original location for outliers chapter
+
+var other_rectangles = otherSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Outliers and Activists";
+}))
+.enter()
+.append("rect")
+.attr("x", (d) => `${d.chapter_start_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_start_y}%`) // y position of the rectangle
+.attr("width", r) // width of the rectangle
+.attr("height", r) // height of the rectangle
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("stroke","black")
+.on("mouseover touchstart", function(event, d) {
+  d3.select(this).classed("bigger", true);
+  tooltipChapters.style("opacity", 1);
+
+})
+.on("mousemove touchmove", function(event, d) {
+  tooltipChapters.style("opacity", 1)
+    .html(
+            ` <b>${d.person}</b><br>
+           [Bio here]`
+          ) 
+      // Set the content of the tooltip to the person's name
+    .style("left", (event.pageX + 10) + "px") // Position the tooltip next to the mouse cursor
+    .style("top", (event.pageY +70) + "px");
+})
+.on("mouseleave touchend", function(event, d) {
+  d3.select(this).classed("bigger", false);
+  tooltipChapters.transition().duration(200).style("opacity", 0);
+});
+  
+other_rectangles.attr("class","bubbles")
 
     scroller.onStepEnter(function (response) {
+     
+      // scrolling and buttons
+      var target = document.querySelector('.scroll-btn[href="' + response.element.id + '"]');
+      if (target) {
+        target.classList.add('active');
+      }
+ 
+
+      // everything else
       if (response.index === 0) {
-        var r = 10;
-        var circles = svg.selectAll("circle")
+        var r = 40;
+        // var circles = svg.selectAll("circle")
+        //   .data(data);
+    
+        // circles.transition()
+        //   .duration(3000)
+        //   .attr("fill", function (d) {
+        //     return colorScale(d.group)
+        //   })
+        //   .attr("cx", function(d) { return d.end_location_x; })
+        //   .attr("cy", function(d) { return d.end_location_y; });
+
+        var rectangles = svg.selectAll("rect")
           .data(data);
     
-        circles.transition()
-          .duration(3000)
+        rectangles.transition()
+          .duration(2000)
           .attr("fill", function (d) {
             return colorScale(d.group)
           })
-          .attr("cx", function(d) { return d.end_location_x; })
-          .attr("cy", function(d) { return d.end_location_y; });
+          .attr("x", (d) => `${d.end_location_x}%`) // x position of the rectangle
+      .attr("y", (d) => `${d.end_location_y}%`) // y position of the rectangle
+      .attr("width", r) // width of the rectangle
+      .attr("height", r) // height of the rectangle
+
+
+
+        // sticky buttons
+        document.getElementById("buttons").classList.add("sticky");
+
+          // bottom 20% sticky
+              // Apply sticky behavior to the bottom 20% of my_dataviz
+    const myDataviz = document.getElementById("my_dataviz");
+    myDataviz.classList.add("partial_sticky");
+
+ 
+      } else if (response.index===1) {
+
+       
+              // judges chapter header
+
+      var rJudge = 50;
+      var judges_rectangles = judgesSvg.selectAll("rect")
+      .data(data.filter(function(d) {
+        return d.group === "Judges";
+      }));
+
+
+// Append 'image' elements for each data point
+var images = judgesSvg.selectAll("image")
+.data(data.filter(function(d) {
+  return d.group === "Judges";
+}));
+
+
+    judges_rectangles.transition()
+      .duration(2000)
+      .attr("fill", function (d) {
+        return colorScale(d.group)
+      })
+      .attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+      .attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+      .attr("width", rJudge) // width of the rectangle
+      .attr("height", rJudge) // height of the rectangle
+
     
-        circles.each(function(d) {
-          d3.select(this)
-            .select("image")
-            .transition()
-            .duration(3000)
-            .attr("x", function(d) { return d.end_location_x - r; }) // center the image horizontally
-            .attr("y", function(d) { return d.end_location_y - r; }); // center the image vertically
-        });
+  images.transition()
+  // .delay(1000)
+  .duration(2000) // Same duration as the judges_rectangles transition
+ 
+  .attr("x", (d) => `${d.chapter_end_x}%`) // x position of the image
+  .attr("y", (d) => `${d.chapter_end_y}%`) // y position of the image
+  .attr("width", rJudge) // width of the image
+  .attr("height", rJudge) // height of the image
+ 
+
+    // sticky buttons
+    document.getElementById("buttons").classList.add("sticky");
+
+
       }
+      else if (response.index===2) {
+
+       
+        // trump admin
+
+var rTrumpAdmin = 50;
+var trump_admin_rectangles = trumpAdminSvg.selectAll("rect")
+.data(data.filter(function(d) {
+  return d.group === "Trump Admin";
+}));
+
+trump_admin_rectangles.transition()
+.duration(2000)
+.attr("fill", function (d) {
+  return colorScale(d.group)
+})
+.attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+.attr("width", rTrumpAdmin) // width of the rectangle
+.attr("height", rTrumpAdmin) // height of the rectangle
+
+
+// sticky buttons
+document.getElementById("buttons").classList.add("sticky");
+
+
+}
+else if (response.index===3) {
+
+       
+  // trump admin
+
+var rSolGen = 50;
+var sol_gen_rectangles = solGenSvg.selectAll("rect")
+.data(data.filter(function(d) {
+return d.group === "Solicitors General";
+}));
+
+sol_gen_rectangles.transition()
+.duration(2000)
+.attr("fill", function (d) {
+return colorScale(d.group)
+})
+.attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+.attr("width", rSolGen) // width of the rectangle
+.attr("height", rSolGen) // height of the rectangle
+
+
+// sticky buttons
+document.getElementById("buttons").classList.add("sticky");
+
+}
+else if (response.index===4) {
+
+       
+  // private practice
+
+var rPrivatePractice = 28;
+var private_practice_rectangles = privatePracticeSvg.selectAll("rect")
+.data(data.filter(function(d) {
+return d.group === "Private Practice";
+}));
+
+private_practice_rectangles.transition()
+.duration(2000)
+.attr("fill", function (d) {
+return colorScale(d.group)
+})
+.attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+.attr("width", rPrivatePractice) // width of the rectangle
+.attr("height", rPrivatePractice) // height of the rectangle
+
+
+// sticky buttons
+document.getElementById("buttons").classList.add("sticky");
+
+}
+else if (response.index===5) {
+
+       
+  // academia
+
+var rAcademia = 50;
+var academia_rectangles = academiaSvg.selectAll("rect")
+.data(data.filter(function(d) {
+return d.group === "Academia";
+}));
+
+academia_rectangles.transition()
+.duration(2000)
+.attr("fill", function (d) {
+return colorScale(d.group)
+})
+.attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+.attr("width", rAcademia) // width of the rectangle
+.attr("height", rAcademia) // height of the rectangle
+
+
+// sticky buttons
+document.getElementById("buttons").classList.add("sticky");
+
+}
+else if (response.index===6) {
+
+       
+  // outliers
+
+var rOther = 50;
+var other_rectangles = otherSvg.selectAll("rect")
+.data(data.filter(function(d) {
+return d.group === "Outliers and Activists";
+}));
+
+other_rectangles.transition()
+.duration(2000)
+.attr("fill", function (d) {
+return colorScale(d.group)
+})
+.attr("x", (d) => `${d.chapter_end_x}%`) // x position of the rectangle
+.attr("y", (d) => `${d.chapter_end_y}%`) // y position of the rectangle
+.attr("width", rOther) // width of the rectangle
+.attr("height", rOther) // height of the rectangle
+
+
+// sticky buttons
+document.getElementById("buttons").classList.add("sticky");
+
+}
+      
+      
+      else {
+        document.getElementById("buttons").classList.remove("sticky");
+            // Remove sticky behavior if not in the first section
+    const myDataviz = document.getElementById("my_dataviz");
+    myDataviz.classList.remove("partial_sticky");
+       
+      }
+
+           
+      // chapter headers
+      // Get the current chapter block and its index
+  const chapterBlock = response.element;
+  const chapterIndex = response.index;
+
+  // Add the "sticky" class to the current chapter block
+  chapterBlock.classList.add("sticky_header");
+
+  // Remove the "sticky" class from all previous chapter blocks
+  for (let i = 0; i < chapterIndex; i++) {
+    const previousChapterBlock = chapterBlocks[i];
+    previousChapterBlock.classList.remove("sticky_header");
+  }
+
+  // Remove the "sticky" class from all subsequent chapter blocks
+  for (let i = chapterIndex + 1; i < chapterBlocks.length; i++) {
+    const subsequentChapterBlock = chapterBlocks[i];
+    subsequentChapterBlock.classList.remove("sticky_header");
+  }
     });
     
+    scroller.onStepExit(function(response) {
+      // Get the corresponding scroll button for the previous section
+      var target = document.querySelector('.scroll-btn[href="' + response.element.id + '"]');
+      if (target) {
+        target.classList.remove('active');
+      }
+    });
     
 //     circles.transition()
 //     .transition()

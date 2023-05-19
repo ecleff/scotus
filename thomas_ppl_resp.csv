@@ -1,0 +1,140 @@
+,index,group,person,image_filename,clerk_term,law_school,appointment,appellate_clerkship,start_location_x,start_location_y,end_location_x,end_location_y,chapter_start_x,chapter_start_y,chapter_end_x,chapter_end_y
+1,1,Judges,Gregory G. Katsas,Gregory G. Katsas.png,1991-92,Harvard (1989),U.S. Court of Appeals (D.C. Circuit),Edward R. Becker (3rd Circuit) -- 1989-90,53,8,0,46,0,46,0,30
+2,2,Judges,Gregory E. Maggs,Gregory E. Maggs.png,1991-92,Harvard (1988),U.S. Court of Appeals for Armed Forces,Joseph Tyree Sneed III (9th Circuit) -- 1988-89,36,5,0,56,0,56,5.5,30
+3,3,Judges,Allison Hartwell Eid,Allison Hartwell Eid.png,1993-94,Chicago (1991),U.S. Court of Appeals (10th Circuit),Jerry Edwin Smith (5th Circuit) -- 1992-93,38,8,0,66,0,66,11,30
+4,4,Judges,Thomas Rex Lee,Thomas Rex Lee.png,1994-95,Chicago (1991),Utah Supreme Court,J. Harvie Wilkinson III (4th Circuit) -- 1991-92,49,6,0,76,0,76,16.5,30
+5,5,Judges,Carl J. Nichols,Carl J. Nichols.png,1997-98,Chicago (1995),U.S. Dictrict Court of the Disstrict of Columbia,Laurence Silberman (D.C. Circuit) -- 1996-97,41,9,0,86,0,86,22,30
+6,6,Judges,Eric D. Miller,Eric D. Miller.png,2000-01,Chicago (1999),U.S. Court of Appeals (9th Circuit),Laurence Silberman (D.C. Circuit) -- 1999-00,46,10,0,96,0,96,27.5,30
+7,7,Judges,Naomi Rao,Naomi Rao.png,2001-02,Chicago (1999),U.S Court of Appeals (D.C. Circuit),J. Harvie Wilkinson III (4th Circuit) -- 1999-00,51,10,4,46,4,46,33,30
+8,8,Judges,Margaret A. Ryan,Margaret A. Ryan.png,2001-02,Notre Dame (1995),U.S. Court of Appeals for Armed Forces,J. Michael Luttig (4th Circuit) -- 2000-01,44,8,4,56,4,56,38.5,30
+9,9,Judges,Emin Toro,Emin Toro.png,2002-03,North Carolina (2001),United States Tax Court,Karen L. Hendersen (D.C. Circuit) -- 2001-02,52,6,4,66,4,66,44,30
+10,10,Judges,David Stras,David Stras.png,2002-03,Kansas (1999),U.S. Court of Appeals (8th Circuit),"J. Michael Luttig (4th Circuit) -- 2000-01
+Melvin Brunetti (9th Circuit) -- 1999-00 ",56,7,4,76,4,76,49.5,30
+11,11,Judges,Martha M. Pacold,Martha M. Pacold.png,2004-05,Chicago (2002),U.S. District Court of the Northern District of Illinois,"Jay Bybee (9th Circuit) -- 2003-04
+A. Raymond Randolph (D.C. Circuit) -- 2002-03",48,10,4,86,4,86,55,30
+12,12,Judges,James C. Ho,James C. Ho.png,2005-06,Chicago (1999),U.S. Court of Appeals (5th Circuit),Jerry Edwin Smith (5th Circuit) -- 1999-00,39,8,4,96,4,96,60.5,30
+13,13,Judges,Adam M. Conrad,Adam M. Conrad.png,2006-07,Georgia (2005),Special Superior Court -- State of North Carolina,David B. Sentelle (D.C. Circuit) -- 2005-06,38,6,8,46,8,46,66,30
+14,14,Judges,Allison Jones Rushing,Allison Jones Rushing.png,2010-11,Duke (2007),U.S. Court of Appeals (4th Circuit),David B. Sentelle (D.C. Circuit) -- 2008-09,56,4,8,56,8,56,71.5,30
+15,15,Judges,Liam P. Hardy,Liam P. Hardy.png,2011-12,Georgetown (2008),U.S. Court of Appeals for Armed Forces,"David B. Sentelle (D.C. Circuit) -- 2009-10
+Margaret A. Ryan (Armed Forces) -- 2008-09",51,6,8,66,8,66,77,30
+16,16,Judges,Kenton J. Skarin,Kenton J. Skarin.png,2012-13,Northwestern (2009),18th Judicial Circuit,J. Harvie Wilkinson III (4th Circuit) -- 2013-14,58,3,8,76,8,76,82.5,30
+17,17,Judges,Andrew Pinson,Andrew Pinson.png,2013-14,Georgia (2011),Georgia Supreme Court,David B. Sentelle (D.C. Circuit) -- 2011-12,37,1,8,86,8,86,88,30
+18,18,Judges,Kathryn Kimball Mizelle,Kathryn Kimball Mizelle.png,2018-19,Florida (2012),U.S. District Court for the Middle District of Florida,"Gregory G. Katsas (D.C. Circuit) -- 2018
+William H. Pryor (11th Circuit) -- 2013-14",33,7,8,96,8,96,93.5,30
+19,79,Trump Admin,Christopher Landau,Christopher Landau.png,,,,,37,9,12.5,56,12.5,56,0,30
+20,80,Trump Admin,Steven G. Bradbury,Steven G. Bradbury.png,,,,,44,4,12.5,66,12.5,66,6.6,30
+21,81,Trump Admin,Stephen R. McAllister,Stephen R. McAllister.png,,,,,55,6,12.5,76,12.5,76,13.2,30
+22,82,Trump Admin,Patrick F. Philbin,Patrick F. Philbin.png,,,,,44,5,12.5,86,12.5,86,19.8,30
+23,83,Trump Admin,Eric A. Grant,Eric A. Grant.png,,,,,35,8,12.5,96,12.5,96,26.4,30
+24,84,Trump Admin,Kate Comerford Todd,Kate Comerford Todd.png,,,,,41,2,16.5,56,16.5,56,33,30
+25,85,Trump Admin,Sigal Mandelker,Sigal Mandelker.png,,,,,42,10,16.5,66,16.5,66,39.6,30
+26,86,Trump Admin,John A. Eisenberg,John A. Eisenberg.png,,,,,54,9,16.5,76,16.5,76,46.2,30
+27,87,Trump Admin,Heath P. Tarbert,Heath P. Tarbert.png,,,,,44,8,16.5,86,16.5,86,52.8,30
+28,88,Trump Admin,David M. Morrell,David M. Morrell.png,,,,,38,8,16.5,96,16.5,96,59.4,30
+29,89,Trump Admin,Jennifer Bandy,Jennifer Bandy.png,,,,,46,1,20.5,56,20.5,56,66,30
+30,90,Trump Admin,Scott G. Stewart,Scott G. Stewart.png,,,,,38,4,20.5,66,20.5,66,72.6,30
+31,91,Trump Admin,Matthew B. Berry,Matthew B. Berry.png,,,,,55,10,20.5,76,20.5,76,79.2,30
+32,92,Trump Admin,David A. Bragdon,David A. Bragdon.png,,,,,55,1,20.5,86,20.5,86,85.8,30
+33,93,Trump Admin,Christine M. Buzzard,Christine M. Buzzard.png,,,,,44,9,20.5,96,20.5,96,92.4,30
+34,157,Solicitors General,Joshua M. Divine,Joshua M. Divine.png,,,,,48,2,24.75,86,24.75,86,0,30
+35,158,Solicitors General,Dan Himmelfarb,Dan Himmelfarb.png,,,,,44,1,24.75,96,24.75,96,16.6,30
+36,159,Solicitors General,Gregory S. Coleman,Gregory S. Coleman.png,,,,,60,4,28.75,86,28.75,86,33.2,30
+37,160,Solicitors General,Henry C. Whitaker,Henry C. Whitaker.png,,,,,43,7,28.75,96,28.75,96,49.8,30
+38,161,Solicitors General,Jeff Wall,Jeff Wall.png,,,,,56,10,32.75,86,32.75,86,66.4,30
+39,162,Solicitors General,Matt Rice,Matt Rice.png,,,,,45,8,32.75,96,32.75,96,83,30
+40,235,Private Practice,Karl M. Tilleman,Karl M. Tilleman.png,,,,,30,1,37,6,37,6,0,0
+41,236,Private Practice,John M. Hughes,John M. Hughes.png,,,,,33,10,37,16,37,16,3.8,0
+42,237,Private Practice,Rebekah Perry Ricketts,Rebekah Perry Ricketts.png,,,,,30,8,37,26,37,26,7.6,0
+43,238,Private Practice,Laura Wolk Slavis,Laura Wolk Slavis.png,,,,,56,9,37,36,37,36,11.4,0
+44,239,Private Practice,Daniel J. Shapiro,Daniel J. Shapiro.png,,,,,47,6,37,46,37,46,15.2,0
+45,240,Private Practice,Gilbert C. Dickey,Gilbert C. Dickey.png,,,,,31,7,37,56,37,56,19,0
+46,241,Private Practice,Taylor A.R. Meehan,Taylor A.R. Meehan.png,,,,,37,10,37,66,37,66,22.8,0
+47,242,Private Practice,Patrick N. Strawbridge,Patrick N. Strawbridge.png,,,,,60,9,37,76,37,76,26.6,0
+48,243,Private Practice,Tyler R. Green,Tyler R. Green.png,,,,,52,7,37,86,37,86,30.4,0
+49,244,Private Practice,Cameron Thomas Norris,Cameron Thomas Norris.png,,,,,33,1,37,96,37,96,34.2,0
+50,245,Private Practice,Haley N. Proctor,Haley N. Proctor.png,,,,,43,6,41,6,41,6,38,0
+51,246,Private Practice,Michael Corcoran,Michael Corcoran.png,,,,,54,4,41,16,41,16,41.8,0
+52,247,Private Practice,M. Scott Proctor,M. Scott Proctor.png,,,,,36,4,41,26,41,26,45.6,0
+53,248,Private Practice,Robert L. Dunn,Robert L. Dunn.png,,,,,41,8,41,36,41,36,49.4,0
+54,249,Private Practice,Kate Comerford Todd,Kate Comerford Todd.png,,,,,30,2,41,46,41,46,53.2,0
+55,250,Private Practice,Eric C. Nelson,Eric C. Nelson.png,,,,,58,1,41,56,41,56,57,0
+56,251,Private Practice,Helgi C. Walker,Helgi C. Walker.png,,,,,55,9,41,66,41,66,60.8,0
+57,252,Private Practice,Ashley E. Johnson,Ashley E. Johnson.png,,,,,42,3,41,76,41,76,64.6,0
+58,253,Private Practice,Elizabeth P. Papez,Elizabeth P. Papez.png,,,,,59,4,41,86,41,86,68.4,0
+59,254,Private Practice,Jacob T. Spencer,Jacob T. Spencer.png,,,,,51,1,41,96,41,96,72.2,0
+60,255,Private Practice,Russell Balikian,Russell Balikian.png,,,,,42,4,45,6,45,6,76,0
+61,256,Private Practice,Caroline Cook Lindsay,Caroline Cook Lindsay.png,,,,,34,8,45,16,45,16,79.8,0
+62,257,Private Practice,John F. Wood,John F. Wood.png,,,,,44,5,45,26,45,26,83.6,0
+63,258,Private Practice,Elbert Lin,Elbert Lin.png,,,,,37,9,45,36,45,36,87.4,0
+64,259,Private Practice,James E. Gauch,James E. Gauch.png,,,,,54,3,45,46,45,46,91.2,0
+65,260,Private Practice,Steven T. Cottreau,Steven T. Cottreau.png,,,,,55,5,45,56,45,56,95,0
+66,261,Private Practice,C. Kevin Marshall,C. Kevin Marshall.png,,,,,53,3,45,66,45,66,0,300
+67,262,Private Practice,Brittany Lane Kubisch,Brittany Lane Kubisch.png,,,,,46,4,45,76,45,76,3.8,300
+68,263,Private Practice,Madeline Ward Lansky,Madeline Ward Lansky.png,,,,,59,9,45,86,45,86,7.6,300
+69,264,Private Practice,Jack L. Millman,Jack L. Millman.png,,,,,41,8,45,96,45,96,11.4,300
+70,265,Private Practice,Alexis Zhang,Alexis Zhang.png,,,,,47,5,49,6,49,6,15.2,300
+71,266,Private Practice,G. Britton Lucas,G. Britton Lucas.png,,,,,39,4,49,16,49,16,19,300
+72,267,Private Practice,Victoria Dorfman,Victoria Dorfman.png,,,,,60,5,49,26,49,26,22.8,300
+73,268,Private Practice,Brian C. Lea,Brian C. Lea.png,,,,,53,10,49,36,49,36,26.6,300
+74,269,Private Practice,David M. Morrell,David M. Morrell.png,,,,,40,1,49,46,49,46,30.4,300
+75,270,Private Practice,Robert N. Stander,Robert N. Stander.png,,,,,40,9,49,56,49,56,34.2,300
+76,271,Private Practice,Christopher C. Goodnow,Christopher C. Goodnow.png,,,,,55,3,49,66,49,66,38,300
+77,272,Private Practice,Brandt Arthur Leibe,Brandt Arthur Leibe.png,,,,,60,1,49,76,49,76,41.8,300
+78,273,Private Practice,Marisa C. Maleck,Marisa C. Maleck.png,,,,,44,10,49,86,49,86,45.6,300
+79,274,Private Practice,Amy R. Upshaw,Amy R. Upshaw.png,,,,,46,2,49,96,49,96,49.4,300
+80,275,Private Practice,Philip M. Cooper,Philip M. Cooper.png,,,,,35,4,53,6,53,6,53.2,300
+81,276,Private Practice,Bijan M. Aboutorabi,Bijan M. Aboutorabi.png,,,,,33,3,53,16,53,16,57,300
+82,277,Private Practice,Caroline Stephens Milner,Caroline Stephens Milner.png,,,,,39,9,53,26,53,26,60.8,300
+83,278,Private Practice,Jasmine Stein,Jasmine Stein.png,,,,,39,6,53,36,53,36,64.6,300
+84,279,Private Practice,Jennifer K. Hardy,Jennifer K. Hardy.png,,,,,31,1,53,46,53,46,68.4,300
+85,280,Private Practice,Craig S. Primis,Craig S. Primis.png,,,,,33,10,53,56,53,56,72.2,300
+86,281,Private Practice,Kasdin M. Mitchell,Kasdin M. Mitchell.png,,,,,35,9,53,66,53,66,76,300
+87,282,Private Practice,Annie M. Wilson,Annie M. Wilson.png,,,,,32,2,53,76,53,76,79.8,300
+88,283,Private Practice,Arthur S. Long,Arthur S. Long.png,,,,,45,7,53,86,53,86,83.6,300
+89,284,Private Practice,Katherin C. Yarger,Katherin C. Yarger.png,,,,,54,7,53,96,53,96,87.4,300
+90,285,Private Practice,Dan Himmelfarb,Dan Himmelfarb.png,,,,,50,10,57,6,57,6,91.2,300
+91,286,Private Practice,C. William Courtney,C. William Courtney.png,,,,,53,3,57,16,57,16,95,300
+92,287,Private Practice,John D. Adams,John D. Adams.png,,,,,36,10,57,26,57,26,0,600
+93,288,Private Practice,Matthew A. Fitzgerald,Matthew A. Fitzgerald.png,,,,,54,4,57,36,57,36,3.8,600
+94,289,Private Practice,Brian D. Schmalzbach,Brian D. Schmalzbach.png,,,,,58,1,57,46,57,46,7.6,600
+95,290,Private Practice,William R. Peterson,William R. Peterson.png,,,,,57,6,57,56,57,56,11.4,600
+96,291,Private Practice,Patrick L. O'Daniel,Patrick L. O'Daniel.png,,,,,37,8,57,66,57,66,15.2,600
+97,292,Private Practice,Brian Lipshutz,Brian Lipshutz.png,,,,,30,10,57,76,57,76,19,600
+98,293,Private Practice,Gregory F. Miller,Gregory F. Miller.png,,,,,51,1,57,86,57,86,22.8,600
+99,294,Private Practice,Chantel L. Febus,Chantel L. Febus.png,,,,,32,6,57,96,57,96,26.6,600
+100,295,Private Practice,Richard M. Corn,Richard M. Corn.png,,,,,51,8,61,6,61,6,30.4,600
+101,296,Private Practice,Stanford I. Weisburst,Stanford I. Weisburst.png,,,,,39,3,61,16,61,16,34.2,600
+102,297,Private Practice,Hannah Clayson Smith,Hannah Clayson Smith.png,,,,,54,7,61,26,61,26,38,600
+103,298,Private Practice,Erik S. Jaffe,Erik S. Jaffe.png,,,,,48,4,61,36,61,36,41.8,600
+104,299,Private Practice,J. Manuel Valle,J. Manuel Valle.png,,,,,48,2,61,46,61,46,45.6,600
+105,300,Private Practice,Jonathan F. Cohn,Jonathan F. Cohn.png,,,,,36,8,61,56,61,56,49.4,600
+106,301,Private Practice,Eric D. McArthur,Eric D. McArthur.png,,,,,41,5,61,66,61,66,53.2,600
+107,302,Private Practice,Brian P. Morrissey Jr.,Brian P. Morrissey Jr..png,,,,,48,1,61,76,61,76,57,600
+108,303,Private Practice,Michelle S. Stratton,Michelle S. Stratton.png,,,,,42,10,61,86,61,86,60.8,600
+109,304,Private Practice,Christopher Ernest Mills,Christopher Ernest Mills.png,,,,,56,10,61,96,61,96,64.6,600
+110,305,Private Practice,Brenden P. Cullen,Brenden P. Cullen.png,,,,,31,10,65,26,65,26,68.4,600
+111,306,Private Practice,Eric J. Kadel Jr.,Eric J. Kadel Jr..png,,,,,52,8,65,36,65,36,72.2,600
+112,307,Private Practice,Diane L. McGimsey,Diane L. McGimsey.png,,,,,52,5,65,46,65,46,76,600
+113,308,Private Practice,Claire J. Evans,Claire J. Evans.png,,,,,32,3,65,56,65,56,79.8,600
+114,309,Private Practice,Matthew B. Nicholson,Matthew B. Nicholson.png,,,,,48,4,65,66,65,66,83.6,600
+115,310,Private Practice,Sarah M. Harris,Sarah M. Harris.png,,,,,47,5,65,76,65,76,87.4,600
+116,311,Private Practice,Leila K. Mongan,Leila K. Mongan.png,,,,,37,10,65,86,65,86,91.2,600
+117,312,Private Practice,Steven J. Lindsay,Steven J. Lindsay.png,,,,,54,2,65,96,65,96,95,600
+118,313,Academia,Jim Chen,Jim Chen.png,,,,,58,6,69.5,66,69.5,66,0,30
+119,314,Academia,Stephen F. Smith,Stephen F. Smith.png,,,,,54,3,69.5,76,69.5,76,9,30
+120,315,Academia,Saikrishna B. Prakash,Saikrishna B. Prakash.png,,,,,36,3,69.5,86,69.5,86,18,30
+121,316,Academia,John C. Yoo,John C. Yoo.png,,,,,54,4,69.5,96,69.5,96,27,30
+122,317,Academia,Caleb Nelson,Caleb Nelson.png,,,,,59,6,73.5,66,73.5,66,36,30
+123,318,Academia,Peter B. Rutledge,Peter B. Rutledge.png,,,,,48,1,73.5,76,73.5,76,45,30
+124,319,Academia,Nicole Stelle Garnett,Nicole Stelle Garnett.png,,,,,50,10,73.5,86,73.5,86,54,30
+125,320,Academia,Ann M. Scarlett,Ann M. Scarlett.png,,,,,57,6,73.5,96,73.5,96,63,30
+126,321,Academia,Jennifer L. Mascott,Jennifer L. Mascott.png,,,,,32,9,77.5,76,77.5,76,72,30
+127,322,Academia,Marah C. Smith,Marah C. Smith.png,,,,,30,2,77.5,86,77.5,86,81,30
+128,323,Academia,Robert J. Leider,Robert J. Leider.png,,,,,46,2,77.5,96,77.5,96,90,30
+129,391,Outliers and Activists,Laura Ingraham,Laura Ingraham.png,,,,,30,6,82,76,82,76,0,30
+130,392,Outliers and Activists,John Eastman,John Eastman.png,,,,,36,1,82,86,82,86,14.28,30
+131,393,Outliers and Activists,Wendy E. Long,Wendy E. Long.png,,,,,42,3,82,96,82,96,28.56,30
+132,394,Outliers and Activists,Carrie Severino,Carrie Severino.png,,,,,35,9,86,86,86,86,42.84,30
+133,395,Outliers and Activists,William S. Consovoy,William S. Consovoy.png,,,,,36,10,86,96,86,96,57.12,30
+134,396,Outliers and Activists,Janet Y. Galeria,Janet Y. Galeria.png,,,,,48,1,90,86,90,86,71.4,30
+135,397,Outliers and Activists,Adam K. Mortara,Adam K. Mortara.png,,,,,46,2,90,96,90,96,85.68,30

@@ -1,12 +1,13 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
-* {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&family=Noto+Serif:ital@0;1&family=Oswald:wght@500;600;700&display=swap');
+/* * {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: "Noto Serif", serif;
   /*sans-serif is the "fallback font"
 /*   fhref="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" */
-}
+/* } */ */
+
 
 [hidden] {
   display: none !important;
@@ -16,6 +17,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  margin: 50px;
 }
 
 *,
@@ -35,11 +37,11 @@ html {
 /* adjust typography defaults */
 body {
   margin: 10px;
-  font-family: "Lato";
+  font-family: "Noto Serif", serif;
   line-height: 1.5;
   background-color: white;
   color: black;
-  width: 900px;
+  width: 100%;
 }
 
 .container {
@@ -51,6 +53,15 @@ body {
 .image {
   margin-left: 10px;
   position: relative;
+  max-width:800px;
+}
+header {
+  background-image: url("Thomas Headline Image (without text).png");
+  width:100%;
+  height:100%;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* set the height to the desired value */
 }
 /*  creating flex boxes for the description section. 1 parent box and 2 children boxes. The parent box is the overall box containing all of the content above the canvas.*/
 .flex-container {
@@ -73,40 +84,54 @@ body {
   flex-grow: 0;
 }
 .title {
-  font-family: "Lato", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-style: 900;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 72px;
   line-height: 105%;
-  margin: 20px;
+  margin: 10px;
+  padding:10px;
   position: relative;
-  color: black;
+  color: white;
 }
-
+.subtitle {
+  font-family: "Oswald", sans-serif;
+  font-style: 900;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 105%;
+  margin: 10px;
+  padding:10px;
+  position: relative;
+  color: white;
+}
 .heading {
   font-size: 24px;
   margin: 20px;
 }
 
 .sub-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Noto Serif", serif;
   font-style: 900;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 105%;
   margin: 20px;
   position: relative;
   color: black;
+  background-color: white;
+  height:100px;
 }
 
 .main-text {
   margin: 20px;
-  font-family: "Lato", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 .legend-text {
   font-size: 10px;
   margin-left: 150px;
 }
+
 .tooltip {
   display: inline;
    /* position: fixed; */ 
@@ -114,15 +139,76 @@ body {
    padding: 10px;
    /* background-color: black; */
    /* border: 1px solid #000; */
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
    border-radius: 5px;
    pointer-events: none;
+   z-index: 9999;
+   font-family: "Noto Sans", sans-serif
  }
 
+ /* SVG containers for graphics */
   #my_dataviz {
     width: 100%;
-    height: 100vh;
+    max-width:100%;
+    height: 75vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
   } 
 
+  #judges_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+
+
+  #trump_admin_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+  #sol_gen_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+  #private_practice_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+  #academia_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+  #other_svg {
+    width: 100%;
+    max-width:100%;
+    height: 30vh;
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* Hide any overflow from the SVG */
+  } 
+
+
+/*  */
   .gradient1 {
     background: linear-gradient(to right,  #361c0e 50%, #570211 50%);
   }
@@ -156,52 +242,113 @@ body {
   .bigger {
     r: 15px;
   }
-  #judges {
+
+
+
+
+ .sticky {
+  position: sticky;
+  top: 0;
+  height:56px;
+  background-color: #d1d6db;
+  width:100%;
+  z-index: 1000;
+}
+ 
+  #judges-button {
     position: absolute;
-    top: 450px;
-    left: 50px;
+    /* top: 450px; */
+    left: 0%;
     padding: 10px;
-    border: 1px solid black;
+    /* border: 2px solid black; */
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
   }
 
-  #trump-admin {
+  #trump-admin-button {
     position: absolute;
-    top: 450px;
-    left: 170px;
+    /* top: 450px; */
+    left: 16%;
     padding: 10px;
-    border: 1px solid black;
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* border: 2px solid black;
+    background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
   }
 
-  #private-practice {
+   #sol-gen-button {
     position: absolute;
-    top: 450px;
-    left: 350px;
+    /* top: 450px; */
+    left: 32%;
     padding: 10px;
-    border: 1px solid black;
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* border: 2px solid black;
+    background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
   }
 
-  #academia {
+
+  #private-practice-button {
     position: absolute;
-    top: 450px;
-    left: 540px;
+    /* top: 450px; */
+    left: 48%;
     padding: 10px;
-    border: 1px solid black;
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* border: 2px solid black;
+    background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
   }
 
-  #sol-gen {
+  #academia-button {
     position: absolute;
-    top: 450px;
-    left: 670px;
+    /* top: 450px; */
+    left: 64%;
     padding: 10px;
-    border: 1px solid black;
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* border: 2px solid black;
+    background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
   }
 
-  #other {
+ 
+  #other-button {
     position: absolute;
-    top: 450px;
-    left: 790px;
+    /* top: 450px; */
+    left: 80%;
     padding: 10px;
-    border: 1px solid black;
+    color:black;
+    font-family: "Noto Sans", sans-serif;
+    /* border: 2px solid black;
+    background-color:grey; */
+    font-size:16px;
+    flex: 1 1 0;
+  flex-wrap: wrap;
+  }
+
+
+.scroll-btn {
+    /* background-color: white; */
+    font-weight: normal;
+  }
+  
+.scroll-btn.active {
+    background-color: white;
   }
  /* .tooltip {
     position: absolute;
@@ -224,9 +371,10 @@ body {
   } 
 
 
-  /* scroll */
+  /* scroll for sorting hat */
   #scroll {
-    position: relative;
+    position: sticky;
+    width:100%;
   }
 
   .scroll__graphic {
@@ -241,7 +389,7 @@ body {
   }
   
   .scroll.trigger{
-    position: sticky;
+    position: fixed;
   }
   .scroll__graphic.is-fixed {
     position: fixed;
@@ -252,11 +400,279 @@ body {
     top: auto;
   }
 
-  .scroll__graphic .chart {
-    position: absolute;
+  .trigger .my_dataviz {
+    position: relative;
     right: 1rem;
     top: 50%;
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+
+/* scroll for judges chapter */
+
+  #scroll2 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll2__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll2.trigger{
+    position: fixed;
+  }
+  .scroll2__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll2__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .judges_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+
+
+  /* scroll for trump admin chapter */
+
+  #scroll3 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll3__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll3.trigger{
+    position: fixed;
+  }
+  .scroll3__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll3__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .trump_admin_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  /* scroll for solicitors general chapter */
+
+  #scroll4 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll4__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll4.trigger{
+    position: fixed;
+  }
+  .scroll4__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll4__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .sol_gen_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  /* scroll for private practice chapter */
+
+  #scroll5 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll5__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll5.trigger{
+    position: fixed;
+  }
+  .scroll5__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll5__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .private_practice_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  /* scroll for academia chapter */
+  #scroll6 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll6__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll6.trigger{
+    position: fixed;
+  }
+  .scroll6__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll6__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .academia_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  /* scroll for outliers and activists chapter */
+  #scroll7 {
+    position: sticky;
+    width:100%;
+  }
+
+  .scroll7__graphic {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .scroll7.trigger{
+    position: fixed;
+  }
+  .scroll7__graphic.is-fixed {
+    position: fixed;
+  }
+  
+  .scroll7__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+  }
+
+  .trigger .other_svg {
+    position: relative;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  /*  */
+.content {
+  width:100%;
+  padding-top: 5%;
+  background-color: #fff;
+ 
+}
+
+
+.chapter_block {
+  background-color: white;
+  /* padding-top: 200px; */
+  /* height: 20px; */
+  top:0;
+
+}
+
+.sticky_header {
+  position: sticky;
+  /* padding-top:20px; */
+  top: 0;
+  z-index:500;
+  /* height: 500px; */
+}
+
+.partial_sticky {
+  position: sticky;
+  bottom: 0;
+  height: 20%;
+}
